@@ -6,7 +6,9 @@ import com.hangarapi.hangarapi.repositories.AircraftRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import java.net.URI;
 import java.util.List;
 import java.util.Optional;
 
@@ -84,4 +86,20 @@ public class AircraftController {
             return ResponseEntity.notFound().build();
         }
     }
+
+    @PostMapping
+    public ResponseEntity<Aircraft> createAircraft(@RequestBody Aircraft aircraft) {
+        if (aircraftRepository.findByAircraftRegistration(aircraft.getAircraftRegistration()).isPresent()) {
+            return ResponseEntity.badRequest().body(null);
+        }
+        aircraftRepository.save(aircraft);
+        URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(aircraft.getId()).toUri();
+        return ResponseEntity.created(uri).body(aircraft);
+    }
+
+//    @PostMapping("/{id}/aircrafts")
+//    public ResponseEntity<Hangar> addAircraftToHangar(@PathVariable Long id, @RequestBody Aircraft aircraft) {
+//        if (aircraftRepository.findByAircraftRegistration(aircraft.getAircraftRegistration()).isPresent()) {
+//            return ResponseEntity.badRequest().body(null);
+//        }
 }
