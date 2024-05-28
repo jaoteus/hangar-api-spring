@@ -20,6 +20,8 @@ public class Aircraft implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(unique = true)
     private String aircraftRegistration;
     private String manufacturer;
     private String model;
@@ -40,6 +42,9 @@ public class Aircraft implements Serializable {
     private String range;
 
 //    private Hangar hangar;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "hangar_id")
+    private Hangar hangar;
 
     public Aircraft() {}
 
@@ -197,6 +202,14 @@ public class Aircraft implements Serializable {
 
     public void setRange(String range) {
         this.range = range;
+    }
+
+    public Hangar getHangar() {
+        return hangar;
+    }
+
+    public void setHangar(Hangar hangar) {
+        this.hangar = hangar;
     }
 
     @Override

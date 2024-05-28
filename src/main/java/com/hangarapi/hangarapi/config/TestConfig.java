@@ -1,30 +1,33 @@
 package com.hangarapi.hangarapi.config;
 
 import com.hangarapi.hangarapi.models.Aircraft;
-//import com.hangarapi.hangarapi.models.Hangar;
+import com.hangarapi.hangarapi.models.Hangar;
 import com.hangarapi.hangarapi.models.enums.AircraftStatus;
 import com.hangarapi.hangarapi.models.enums.AircraftType;
 import com.hangarapi.hangarapi.models.enums.EngineType;
 import com.hangarapi.hangarapi.repositories.AircraftRepository;
-//import com.hangarapi.hangarapi.repositories.HangarRepository;
-import org.hibernate.internal.build.AllowPrintStacktrace;
+import com.hangarapi.hangarapi.repositories.HangarRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
 
-@Configuration
+@Component
 public class TestConfig implements CommandLineRunner {
 
     @Autowired
     private AircraftRepository aircraftRepository;
 
-//    @Autowired
-//    private HangarRepository hangarRepository;
+    @Autowired
+    private HangarRepository hangarRepository;
 
     @Override
     public void run(String... args) throws Exception {
+
+        Hangar hangar = new Hangar(null,"Teste nome", "SBRF");
+        hangarRepository.save(hangar);
 
         Aircraft aircraft1 = new Aircraft(
                 null,
@@ -87,14 +90,12 @@ public class TestConfig implements CommandLineRunner {
                 "21000.00"
         );
 
-//        Hangar hangar1 = new Hangar(null, "SBRF");
-//
-//        hangar1.getAircrafts().add(aircraft1);
-//        hangar1.getAircrafts().add(aircraft2);
-//        hangar1.getAircrafts().add(aircraft3);
-//
-//        hangarRepository.save(hangar1);
-
         aircraftRepository.saveAll(Arrays.asList(aircraft1, aircraft2, aircraft3));
+
+        // Add Aircrafts to Hangar
+//        hangar.getAircrafts().add(aircraft1);
+hangar.addAircraft(aircraft1);
+        // Save the Hangar (cascade saves Aircrafts as well)
+        hangarRepository.save(hangar);
     }
 }
