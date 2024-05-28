@@ -93,6 +93,7 @@ public class TestConfig implements CommandLineRunner {
 
         aircraftRepository.saveAll(Arrays.asList(aircraft1, aircraft2, aircraft3));
 
+        //  adding some aircrafts in hangar
         hangar.addAircraft(aircraft1);
         hangar.addAircraft(aircraft2);
         hangar.addAircraft(aircraft3);

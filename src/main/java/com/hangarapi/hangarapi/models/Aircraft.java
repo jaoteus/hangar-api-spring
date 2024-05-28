@@ -20,29 +20,44 @@ public class Aircraft implements Serializable {
     // informações técnicas
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    @Column(name = "id")
     private Long id;
 
-    @Column(unique = true)
+    @Column(unique = true, name = "aircraft_registration")
     private String aircraftRegistration;
+    @Column(name = "manufacturer")
     private String manufacturer;
+    @Column(name = "model")
     private String model;
+    @Column(name = "aircraft_type")
     private AircraftType aircraftType;
+    @Column(name = "aircraft_status")
     private AircraftStatus aircraftStatus;
+    @Column(name = "engine_type")
     private EngineType engineType;
 
     // caracteristicas físicas básicas
+    @Column(name = "length")
     private String length;
+    @Column(name = "height")
     private String height;
+    @Column(name = "weight")
     private String weight;
+    @Column(name = "maximum_takeoff_weight")
     private String maximumTakeOffWeight;
+    @Column(name = "maximum_landing_weight")
     private String maximumLandingWeight;
+    @Column(name = "operator")
     private String operator;
+    @Column(name = "year_built")
     private String yearBuilt;
+    @Column(name = "maximum_cargo_capacity")
     private String maximumCargoCapacity;
+    @Column(name = "seating_capacity")
     private String seatingCapacity;
+    @Column(name = "range")
     private String range;
 
-//    private Hangar hangar;
     @ManyToOne(fetch = FetchType.LAZY)
     @JsonIgnore
     @JoinColumn(name = "hangar_id")
