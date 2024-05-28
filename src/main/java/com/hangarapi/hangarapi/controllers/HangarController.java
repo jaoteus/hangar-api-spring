@@ -85,8 +85,15 @@ public class HangarController {
         Optional<Aircraft> aircraft = aircraftRepository.findById(aircraftId);
         if (aircraft.isPresent()) {
             Aircraft updatedAircraft = aircraft.get();
+            updatedAircraft.setAircraftStatus(aircraftDetails.getAircraftStatus());
+            updatedAircraft.setOperator(aircraftDetails.getOperator());
+            updatedAircraft.setSeatingCapacity(aircraftDetails.getSeatingCapacity());
             updatedAircraft.setModel(aircraftDetails.getModel());
             updatedAircraft.setAircraftRegistration(aircraftDetails.getAircraftRegistration());
+
+            if (aircraftRepository.findByAircraftRegistration(updatedAircraft.getAircraftRegistration()).isPresent()) {
+                return ResponseEntity.badRequest().body(null);
+            }
             return ResponseEntity.ok(aircraftRepository.save(updatedAircraft));
         } else {
             return ResponseEntity.notFound().build();

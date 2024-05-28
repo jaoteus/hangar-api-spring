@@ -1,5 +1,6 @@
 package com.hangarapi.hangarapi.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.hangarapi.hangarapi.models.enums.AircraftStatus;
 import com.hangarapi.hangarapi.models.enums.AircraftType;
 import com.hangarapi.hangarapi.models.enums.EngineType;
@@ -43,6 +44,7 @@ public class Aircraft implements Serializable {
 
 //    private Hangar hangar;
     @ManyToOne(fetch = FetchType.LAZY)
+    @JsonIgnore
     @JoinColumn(name = "hangar_id")
     private Hangar hangar;
 

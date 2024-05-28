@@ -14,6 +14,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
 
+//@Configuration
 @Component
 public class TestConfig implements CommandLineRunner {
 
@@ -92,10 +93,10 @@ public class TestConfig implements CommandLineRunner {
 
         aircraftRepository.saveAll(Arrays.asList(aircraft1, aircraft2, aircraft3));
 
-        // Add Aircrafts to Hangar
-//        hangar.getAircrafts().add(aircraft1);
-hangar.addAircraft(aircraft1);
-        // Save the Hangar (cascade saves Aircrafts as well)
+        hangar.addAircraft(aircraft1);
+        hangar.addAircraft(aircraft2);
+        hangar.addAircraft(aircraft3);
+
         hangarRepository.save(hangar);
     }
 }

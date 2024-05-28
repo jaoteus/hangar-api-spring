@@ -24,7 +24,6 @@ public class Hangar implements Serializable {
     private String name;
     private String airportRegistration;
 
-    @JsonIgnore
     @OneToMany(mappedBy = "hangar", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Aircraft> aircrafts = new ArrayList<>();
 
@@ -33,6 +32,7 @@ public class Hangar implements Serializable {
 
     public Hangar(Long id, String name, String airportRegistration){
         this.id = id;
+        this.name = name;
         this.airportRegistration = airportRegistration;
     }
 
