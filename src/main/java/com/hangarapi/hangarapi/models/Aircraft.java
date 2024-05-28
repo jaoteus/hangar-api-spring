@@ -23,20 +23,20 @@ public class Aircraft {
     private EngineType engineType;
 
     // caracteristicas físicas básicas
-    private Double length;
-    private Double height;
-    private Double weight;
-    private Double maximumTakeOffWeight;
-    private Double maximumLandingWeight;
+    private String length;
+    private String height;
+    private String weight;
+    private String maximumTakeOffWeight;
+    private String maximumLandingWeight;
     private String operator;
-    private Integer yearBuilt;
-    private Double maximumCargoCapacity;
-    private Integer seatingCapacity;
-    private Double range;
+    private String yearBuilt;
+    private String maximumCargoCapacity;
+    private String seatingCapacity;
+    private String range;
 
     public Aircraft() {}
 
-    public Aircraft(String aircraftRegistration, String manufacturer, String model, AircraftType aircraftType, AircraftStatus aircraftStatus, EngineType engineType, Double height, Double length, Double weight, Double maximumTakeOffWeight, Double maximumLandingWeight, String operator, Double maximumCargoCapacity, Integer yearBuilt, Integer seatingCapacity, Double range) {
+    public Aircraft(String aircraftRegistration, String manufacturer, String model, AircraftType aircraftType, AircraftStatus aircraftStatus, EngineType engineType, String height, String length, String weight, String maximumTakeOffWeight, String maximumLandingWeight, String operator, String maximumCargoCapacity, String yearBuilt, String seatingCapacity, String range) {
         this.aircraftRegistration = aircraftRegistration;
         this.manufacturer = manufacturer;
         this.model = model;
@@ -103,43 +103,43 @@ public class Aircraft {
         this.engineType = engineType;
     }
 
-    public Double getLength() {
+    public String getLength() {
         return length;
     }
 
-    public void setLength(Double length) {
+    public void setLength(String length) {
         this.length = length;
     }
 
-    public Double getHeight() {
+    public String getHeight() {
         return height;
     }
 
-    public void setHeight(Double height) {
+    public void setHeight(String height) {
         this.height = height;
     }
 
-    public Double getWeight() {
+    public String getWeight() {
         return weight;
     }
 
-    public void setWeight(Double weight) {
+    public void setWeight(String weight) {
         this.weight = weight;
     }
 
-    public Double getMaximumTakeOffWeight() {
+    public String getMaximumTakeOffWeight() {
         return maximumTakeOffWeight;
     }
 
-    public void setMaximumTakeOffWeight(Double maximumTakeOffWeight) {
+    public void setMaximumTakeOffWeight(String maximumTakeOffWeight) {
         this.maximumTakeOffWeight = maximumTakeOffWeight;
     }
 
-    public Double getMaximumLandingWeight() {
+    public String getMaximumLandingWeight() {
         return maximumLandingWeight;
     }
 
-    public void setMaximumLandingWeight(Double maximumLandingWeight) {
+    public void setMaximumLandingWeight(String maximumLandingWeight) {
         this.maximumLandingWeight = maximumLandingWeight;
     }
 
@@ -151,35 +151,35 @@ public class Aircraft {
         this.operator = operator;
     }
 
-    public Integer getYearBuilt() {
+    public String getYearBuilt() {
         return yearBuilt;
     }
 
-    public void setYearBuilt(Integer yearBuilt) {
+    public void setYearBuilt(String yearBuilt) {
         this.yearBuilt = yearBuilt;
     }
 
-    public Double getMaximumCargoCapacity() {
+    public String getMaximumCargoCapacity() {
         return maximumCargoCapacity;
     }
 
-    public void setMaximumCargoCapacity(Double maximumCargoCapacity) {
+    public void setMaximumCargoCapacity(String maximumCargoCapacity) {
         this.maximumCargoCapacity = maximumCargoCapacity;
     }
 
-    public Integer getSeatingCapacity() {
+    public String getSeatingCapacity() {
         return seatingCapacity;
     }
 
-    public void setSeatingCapacity(Integer seatingCapacity) {
+    public void setSeatingCapacity(String seatingCapacity) {
         this.seatingCapacity = seatingCapacity;
     }
 
-    public Double getRange() {
+    public String getRange() {
         return range;
     }
 
-    public void setRange(Double range) {
+    public void setRange(String range) {
         this.range = range;
     }
 
