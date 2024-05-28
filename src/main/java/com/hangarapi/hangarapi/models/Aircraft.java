@@ -3,18 +3,23 @@ package com.hangarapi.hangarapi.models;
 import com.hangarapi.hangarapi.models.enums.AircraftStatus;
 import com.hangarapi.hangarapi.models.enums.AircraftType;
 import com.hangarapi.hangarapi.models.enums.EngineType;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
+import java.io.Serial;
+import java.io.Serializable;
 import java.util.Objects;
 
 @Entity
 @Table(name = "tb_aircraft")
-public class Aircraft {
+public class Aircraft implements Serializable {
+
+    @Serial
+    private static final long serialVersionUID = 1L;
 
     // informações técnicas
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private String aircraftRegistration;
     private String manufacturer;
     private String model;
@@ -34,9 +39,12 @@ public class Aircraft {
     private String seatingCapacity;
     private String range;
 
+//    private Hangar hangar;
+
     public Aircraft() {}
 
-    public Aircraft(String aircraftRegistration, String manufacturer, String model, AircraftType aircraftType, AircraftStatus aircraftStatus, EngineType engineType, String height, String length, String weight, String maximumTakeOffWeight, String maximumLandingWeight, String operator, String maximumCargoCapacity, String yearBuilt, String seatingCapacity, String range) {
+    public Aircraft(Long id, String aircraftRegistration, String manufacturer, String model, AircraftType aircraftType, AircraftStatus aircraftStatus, EngineType engineType, String height, String length, String weight, String maximumTakeOffWeight, String maximumLandingWeight, String operator, String maximumCargoCapacity, String yearBuilt, String seatingCapacity, String range) {
+        this.id = id;
         this.aircraftRegistration = aircraftRegistration;
         this.manufacturer = manufacturer;
         this.model = model;
@@ -53,6 +61,14 @@ public class Aircraft {
         this.yearBuilt = yearBuilt;
         this.seatingCapacity = seatingCapacity;
         this.range = range;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getAircraftRegistration() {

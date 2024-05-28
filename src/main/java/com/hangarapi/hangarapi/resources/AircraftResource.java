@@ -21,9 +21,9 @@ public class AircraftResource {
         return ResponseEntity.ok().body(aircraftList);
     }
 
-    @GetMapping(value = "/{aircraftRegistration}")
-    public ResponseEntity<Aircraft> findById(@PathVariable String aircraftRegistration) {
-        Aircraft aircraft = aircraftService.findById(aircraftRegistration);
+    @GetMapping(value = "/{id}")
+    public ResponseEntity<Aircraft> findById(@PathVariable Long id) {
+        Aircraft aircraft = aircraftService.findById(id);
         return ResponseEntity.ok().body(aircraft);
     }
 }

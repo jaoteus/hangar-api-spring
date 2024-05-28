@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository;
 import com.hangarapi.hangarapi.models.Aircraft;
 
 @Repository
-public interface AircraftRepository extends JpaRepository<Aircraft, String> {
+public interface AircraftRepository extends JpaRepository<Aircraft, Long> {
 }

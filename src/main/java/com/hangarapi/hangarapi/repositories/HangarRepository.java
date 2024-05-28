@@ -6,5 +6,5 @@
 //import com.hangarapi.hangarapi.models.*;
 //
 //@Repository
-//public interface HangarRepository extends JpaRepository<Aircraft, String> {
+//public interface HangarRepository extends JpaRepository<Hangar, Long> {
 //}

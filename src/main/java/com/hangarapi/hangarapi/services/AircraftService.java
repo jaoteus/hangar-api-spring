@@ -18,8 +18,8 @@ public class AircraftService {
         return aircraftRepository.findAll();
     }
 
-    public Aircraft findById(String aircraftRegistration) {
-        Optional<Aircraft> optionalAircraft = aircraftRepository.findById(aircraftRegistration);
+    public Aircraft findById(Long id) {
+        Optional<Aircraft> optionalAircraft = aircraftRepository.findById(id);
         return optionalAircraft.get();
     }
 }
