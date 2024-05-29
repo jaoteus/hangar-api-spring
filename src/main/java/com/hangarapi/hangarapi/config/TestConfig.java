@@ -18,6 +18,7 @@ import java.util.Arrays;
 @Component
 public class TestConfig implements CommandLineRunner {
 
+    // dependencies
     @Autowired
     private AircraftRepository aircraftRepository;
 
@@ -27,6 +28,7 @@ public class TestConfig implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
+        // creating some hangars
         Hangar hangar1 = new Hangar(null,"Hangar no Recife", "SBRF");
         Hangar hangar2 = new Hangar(null,"Hangar Militar da Base Áerea de Anápolis", "SBAN");
         Hangar hangar3 = new Hangar(null, "Hangar em Jacarepagua", "SBJR");
