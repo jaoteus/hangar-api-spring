@@ -2,7 +2,14 @@ package com.hangarapi.hangarapi.models;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import jakarta.persistence.*;
+import jakarta.persistence.Id;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.CascadeType;
 
 import java.io.Serial;
 import java.io.Serializable;
@@ -20,8 +27,11 @@ public class Hangar implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long id;
+    @Column(name = "name")
     private String name;
+    @Column(name = "airport_registration")
     private String airportRegistration;
 
     @OneToMany(mappedBy = "hangar", cascade = CascadeType.ALL, orphanRemoval = true)

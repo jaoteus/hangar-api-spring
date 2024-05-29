@@ -27,7 +27,7 @@ public class TestConfig implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-        Hangar hangar = new Hangar(null,"Teste nome", "SBRF");
+        Hangar hangar = new Hangar(null,"Meu hangar no Recife", "SBRF");
         hangarRepository.save(hangar);
 
         Aircraft aircraft1 = new Aircraft(

@@ -4,7 +4,15 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.hangarapi.hangarapi.models.enums.AircraftStatus;
 import com.hangarapi.hangarapi.models.enums.AircraftType;
 import com.hangarapi.hangarapi.models.enums.EngineType;
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Column;
+import jakarta.persistence.Id;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Table;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.FetchType;
 
 import java.io.Serial;
 import java.io.Serializable;
@@ -20,9 +28,8 @@ public class Aircraft implements Serializable {
     // informações técnicas
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-//    @Column(name = "id")
+    @Column(name = "id")
     private Long id;
-
     @Column(unique = true, name = "aircraft_registration")
     private String aircraftRegistration;
     @Column(name = "manufacturer")

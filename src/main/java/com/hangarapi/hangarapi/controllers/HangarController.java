@@ -6,7 +6,15 @@ import com.hangarapi.hangarapi.repositories.AircraftRepository;
 import com.hangarapi.hangarapi.repositories.HangarRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.net.URI;
@@ -85,6 +93,21 @@ public class HangarController {
             Hangar hangar = optionalHangar.get();
             Aircraft aircraft = optionalAircraft.get();
             hangar.addAircraft(aircraft);
+            hangarRepository.save(hangar);
+            return ResponseEntity.ok().body(aircraft);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
+    @DeleteMapping("/{hangarId}/aircrafts/{aircraftId}")
+    public ResponseEntity<Aircraft> removeAircraftInHangar(@PathVariable Long hangarId, @PathVariable Long aircraftId) {
+        Optional<Aircraft> optionalAircraft = aircraftRepository.findById(aircraftId);
+        Optional<Hangar> optionalHangar = hangarRepository.findById(hangarId);
+        if (optionalAircraft.isPresent() && optionalHangar.isPresent()) {
+            Hangar hangar = optionalHangar.get();
+            Aircraft aircraft = optionalAircraft.get();
+            hangar.removeAircraft(aircraft);
             hangarRepository.save(hangar);
             return ResponseEntity.ok().body(aircraft);
         } else {
