@@ -217,6 +217,7 @@ public class TestConfig implements CommandLineRunner {
                 "1700.00"
         );
 
+        // saving the aircrafts we added on aircraft repository
         aircraftRepository.saveAll(Arrays.asList(aircraft1, aircraft2, aircraft3));
         aircraftRepository.saveAll(Arrays.asList(aircraft4, aircraft5, aircraft6));
         aircraftRepository.saveAll(Arrays.asList(aircraft7, aircraft8, aircraft9));
