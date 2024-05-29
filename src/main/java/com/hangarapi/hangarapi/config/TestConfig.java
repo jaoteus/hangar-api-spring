@@ -31,9 +31,10 @@ public class TestConfig implements CommandLineRunner {
         Hangar hangar2 = new Hangar(null,"Hangar Militar da Base Áerea de Anápolis", "SBAN");
         Hangar hangar3 = new Hangar(null, "Hangar em Jacarepagua", "SBJR");
 
+        // saving some hangars we created
         hangarRepository.saveAll(Arrays.asList(hangar1, hangar2, hangar3));
 
-        // comercial aircrafts
+        // creating some comercial aircrafts
         Aircraft aircraft1 = new Aircraft(
                 null,
                 "PS-PTO",
@@ -95,7 +96,7 @@ public class TestConfig implements CommandLineRunner {
                 "21000.00"
         );
 
-        // military aircrafts
+        // creating some military aircrafts
         Aircraft aircraft4 = new Aircraft(
                 null,
                 "FAB1441",
@@ -156,7 +157,7 @@ public class TestConfig implements CommandLineRunner {
                 "15000.00"
         );
 
-        // comercial aicraft with turboshaft engine
+        // creating some comercial aicraft with turboshaft engine
         Aircraft aircraft7 = new Aircraft(
                 null,
                 "PR-OHG",
