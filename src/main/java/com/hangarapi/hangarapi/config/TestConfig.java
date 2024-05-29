@@ -27,10 +27,11 @@ public class TestConfig implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-        Hangar hangar1 = new Hangar(null,"Meu hangar no Recife", "SBRF");
+        Hangar hangar1 = new Hangar(null,"Hangar no Recife", "SBRF");
         Hangar hangar2 = new Hangar(null,"Hangar Militar da Base Áerea de Anápolis", "SBAN");
+        Hangar hangar3 = new Hangar(null, "Hangar em Jacarepagua", "SBJR");
 
-        hangarRepository.saveAll(Arrays.asList(hangar1, hangar2));
+        hangarRepository.saveAll(Arrays.asList(hangar1, hangar2, hangar3));
 
         // comercial aircrafts
         Aircraft aircraft1 = new Aircraft(
@@ -155,8 +156,70 @@ public class TestConfig implements CommandLineRunner {
                 "15000.00"
         );
 
+        // comercial aicraft with turboshaft engine
+        Aircraft aircraft7 = new Aircraft(
+                null,
+                "PR-OHG",
+                "Sikorsky",
+                "S-92A",
+                AircraftType.COMERCIAL,
+                AircraftStatus.ACTIVE,
+                EngineType.TURBOSHAFT,
+                "0.0",
+                "0.0",
+                "0.0",
+                "1000.00",
+                "1000.00",
+                "Omni Taxi Aereo",
+                "230.00",
+                "2016",
+                "10",
+                "1700.00"
+        );
+
+        Aircraft aircraft8 = new Aircraft(
+                null,
+                "PR-LDG",
+                "Sikorsky",
+                "S-76C-2",
+                AircraftType.COMERCIAL,
+                AircraftStatus.ACTIVE,
+                EngineType.TURBOSHAFT,
+                "0.0",
+                "0.0",
+                "0.0",
+                "1000.00",
+                "1000.00",
+                "Lider Aviação",
+                "257.00",
+                "2016",
+                "8",
+                "1700.00"
+        );
+
+        Aircraft aircraft9 = new Aircraft(
+                null,
+                "PR-BGU",
+                "Sikorsky",
+                "S-92A",
+                AircraftType.COMERCIAL,
+                AircraftStatus.ACTIVE,
+                EngineType.TURBOSHAFT,
+                "0.0",
+                "0.0",
+                "0.0",
+                "1000.00",
+                "1000.00",
+                "CHC Helicopter",
+                "295.00",
+                "2016",
+                "12",
+                "1700.00"
+        );
+
         aircraftRepository.saveAll(Arrays.asList(aircraft1, aircraft2, aircraft3));
         aircraftRepository.saveAll(Arrays.asList(aircraft4, aircraft5, aircraft6));
+        aircraftRepository.saveAll(Arrays.asList(aircraft7, aircraft8, aircraft9));
 
         //  adding some comercial aircrafts in hangar1
         hangar1.addAircraft(aircraft1);
@@ -168,8 +231,14 @@ public class TestConfig implements CommandLineRunner {
         hangar2.addAircraft(aircraft5);
         hangar2.addAircraft(aircraft6);
 
+        //  adding some comercial aircrafts with turboshaft engine
+        hangar3.addAircraft(aircraft7);
+        hangar3.addAircraft(aircraft8);
+        hangar3.addAircraft(aircraft9);
+
         // saving all hangars
-        hangarRepository.save(hangar2);
         hangarRepository.save(hangar1);
+        hangarRepository.save(hangar2);
+        hangarRepository.save(hangar3);
     }
 }
