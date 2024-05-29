@@ -95,6 +95,7 @@ public class AircraftController {
         }
     }
 
+    // create an aircraft
     @PostMapping
     public ResponseEntity<Aircraft> createAircraft(@RequestBody Aircraft aircraft) {
         if (aircraftRepository.findByAircraftRegistration(aircraft.getAircraftRegistration()).isPresent()) {
@@ -104,10 +105,4 @@ public class AircraftController {
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(aircraft.getId()).toUri();
         return ResponseEntity.created(uri).body(aircraft);
     }
-
-//    @PostMapping("/{id}/aircrafts")
-//    public ResponseEntity<Hangar> addAircraftToHangar(@PathVariable Long id, @RequestBody Aircraft aircraft) {
-//        if (aircraftRepository.findByAircraftRegistration(aircraft.getAircraftRegistration()).isPresent()) {
-//            return ResponseEntity.badRequest().body(null);
-//        }
 }

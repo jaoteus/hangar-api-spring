@@ -32,17 +32,20 @@ public class HangarController {
     @Autowired
     private AircraftRepository aircraftRepository;
 
+    // get all hangars
     @GetMapping
     public ResponseEntity<List<Hangar>> getAllHangars() {
         return ResponseEntity.ok().body(hangarRepository.findAll());
     }
 
+    // get one hangar
     @GetMapping("/{id}")
     public ResponseEntity<Hangar> getHangarById(@PathVariable Long id) {
         Optional<Hangar> hangar = hangarRepository.findById(id);
         return hangar.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
 
+    // create a hangar
     @PostMapping
     public ResponseEntity<Hangar> createHangar(@RequestBody Hangar hangar) {
         hangarRepository.save(hangar);
@@ -50,6 +53,7 @@ public class HangarController {
         return ResponseEntity.created(uri).body(hangar);
     }
 
+    // update all hangar fields
     @PutMapping("/{id}")
     public ResponseEntity<Hangar> updateAllHangarData(@PathVariable Long id, @RequestBody Hangar hangarDetails) {
         Optional<Hangar> hangar = hangarRepository.findById(id);
@@ -62,6 +66,7 @@ public class HangarController {
         }
     }
 
+    // update some hangar fields
     @PatchMapping("/{id}")
     public ResponseEntity<Hangar> updateSomeHangarData(@PathVariable Long id, @RequestBody Hangar hangarDetails) {
         Optional<Hangar> hangar = hangarRepository.findById(id);
@@ -74,6 +79,7 @@ public class HangarController {
         }
     }
 
+    // delete a hangar by id
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteHangar(@PathVariable Long id) {
         Optional<Hangar> hangar = hangarRepository.findById(id);
@@ -85,6 +91,7 @@ public class HangarController {
         }
     }
 
+    // add an aircraft (by its id) to a hangar (by its id)
     @PostMapping("/{hangarId}/aircrafts/{aircraftId}")
     public ResponseEntity<Aircraft> addAircraftInHangar(@PathVariable Long hangarId, @PathVariable Long aircraftId) {
         Optional<Aircraft> optionalAircraft = aircraftRepository.findById(aircraftId);
@@ -100,6 +107,7 @@ public class HangarController {
         }
     }
 
+    // remove an aircraft (by its id) from a hangar (by its id)
     @DeleteMapping("/{hangarId}/aircrafts/{aircraftId}")
     public ResponseEntity<Aircraft> removeAircraftInHangar(@PathVariable Long hangarId, @PathVariable Long aircraftId) {
         Optional<Aircraft> optionalAircraft = aircraftRepository.findById(aircraftId);

@@ -25,7 +25,7 @@ public class Aircraft implements Serializable {
     @Serial
     private static final long serialVersionUID = 1L;
 
-    // informações técnicas
+    // technical informations
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
@@ -43,7 +43,7 @@ public class Aircraft implements Serializable {
     @Column(name = "engine_type")
     private EngineType engineType;
 
-    // caracteristicas físicas básicas
+    // basic physical characteristics
     @Column(name = "length")
     private String length;
     @Column(name = "height")
