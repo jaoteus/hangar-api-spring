@@ -27,9 +27,12 @@ public class TestConfig implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-        Hangar hangar = new Hangar(null,"Meu hangar no Recife", "SBRF");
-        hangarRepository.save(hangar);
+        Hangar hangar1 = new Hangar(null,"Meu hangar no Recife", "SBRF");
+        Hangar hangar2 = new Hangar(null,"Hangar Militar da Base Áerea de Anápolis", "SBAN");
 
+        hangarRepository.saveAll(Arrays.asList(hangar1, hangar2));
+
+        // comercial aircrafts
         Aircraft aircraft1 = new Aircraft(
                 null,
                 "PS-PTO",
@@ -91,13 +94,82 @@ public class TestConfig implements CommandLineRunner {
                 "21000.00"
         );
 
+        // military aircrafts
+        Aircraft aircraft4 = new Aircraft(
+                null,
+                "FAB1441",
+                "Embraer",
+                "T-27M Tucano",
+                AircraftType.MILITARY,
+                AircraftStatus.ACTIVE,
+                EngineType.TURBOPROP,
+                "0.0",
+                "0.0",
+                "0.0",
+                "1000.00",
+                "1000.00",
+                "Força Áerea Brasileira",
+                "1000.00",
+                "2016",
+                "2",
+                "2000.00"
+        );
+
+        Aircraft aircraft5 = new Aircraft(
+                null,
+                "FAB2855",
+                "Embraer",
+                "KC-390",
+                AircraftType.MILITARY,
+                AircraftStatus.ACTIVE,
+                EngineType.TURBOFAN,
+                "0.0",
+                "0.0",
+                "0.0",
+                "1000.00",
+                "1000.00",
+                "Força Áerea Brasileira",
+                "1000.00",
+                "2016",
+                "378",
+                "15000.00"
+        );
+
+        Aircraft aircraft6 = new Aircraft(
+                null,
+                "FAB2857",
+                "Embraer",
+                "KC-390",
+                AircraftType.MILITARY,
+                AircraftStatus.ACTIVE,
+                EngineType.TURBOFAN,
+                "0.0",
+                "0.0",
+                "0.0",
+                "1000.00",
+                "1000.00",
+                "Força Aérea Brasileira",
+                "1000.00",
+                "2016",
+                "378",
+                "15000.00"
+        );
+
         aircraftRepository.saveAll(Arrays.asList(aircraft1, aircraft2, aircraft3));
+        aircraftRepository.saveAll(Arrays.asList(aircraft4, aircraft5, aircraft6));
 
-        //  adding some aircrafts in hangar
-        hangar.addAircraft(aircraft1);
-        hangar.addAircraft(aircraft2);
-        hangar.addAircraft(aircraft3);
+        //  adding some comercial aircrafts in hangar1
+        hangar1.addAircraft(aircraft1);
+        hangar1.addAircraft(aircraft2);
+        hangar1.addAircraft(aircraft3);
 
-        hangarRepository.save(hangar);
+        // adding some military aircrafts in hangar2
+        hangar2.addAircraft(aircraft4);
+        hangar2.addAircraft(aircraft5);
+        hangar2.addAircraft(aircraft6);
+
+        // saving all hangars
+        hangarRepository.save(hangar2);
+        hangarRepository.save(hangar1);
     }
 }
