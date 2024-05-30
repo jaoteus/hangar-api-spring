@@ -65,9 +65,9 @@ public class AircraftController {
             updatedAircraft.setModel(aircraftDetails.getModel());
             updatedAircraft.setAircraftRegistration(aircraftDetails.getAircraftRegistration());
 
-            if (aircraftRepository.findByAircraftRegistration(updatedAircraft.getAircraftRegistration()).isPresent()) {
-                return ResponseEntity.badRequest().body(null);
-            }
+//            if (aircraftRepository.findByAircraftRegistration(updatedAircraft.getAircraftRegistration()).isPresent()) {
+//                return ResponseEntity.badRequest().body(null);
+//            }
             return ResponseEntity.ok(aircraftRepository.save(updatedAircraft));
         } else {
             return ResponseEntity.notFound().build();

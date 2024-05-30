@@ -60,6 +60,7 @@ public class HangarController {
         if (hangar.isPresent()) {
             Hangar updatedHangar = hangar.get();
             updatedHangar.setAirportRegistration(hangarDetails.getAirportRegistration());
+            updatedHangar.setName(hangarDetails.getName());
             return ResponseEntity.ok(hangarRepository.save(updatedHangar));
         } else {
             return ResponseEntity.notFound().build();
