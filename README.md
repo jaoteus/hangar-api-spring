@@ -74,6 +74,7 @@ A `divisão` de camadas do projeto será:
 - **Exemplo de Cadastro:**
 
 <!-- ![rota post swagger](https://github.com/lucasgm18/oficina-api/assets/127359287/0c43005b-d6a3-4667-9973-c7011afbcbd4) -->
+![Screenshot from 2024-05-30 19-50-38](https://github.com/jaoteus/hangar-api-spring/assets/128613422/a1d19512-7bdd-49ed-aad2-40916020d09e)
 
 ---
 
