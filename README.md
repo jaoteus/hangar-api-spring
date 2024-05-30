@@ -31,6 +31,8 @@ This API allows the developer to add, update, read and delete an aircraft or Han
 - Consultar um hangar.
 - Atualizar um hangar.
 - Deletar um hangar.
+- Adicionar uma aeronave no hangar.
+- Remover uma aeronave do hangar.
 
 ## 🎧 Tecnologias Utilizadas
 
@@ -52,7 +54,6 @@ A `divisão` de camadas do projeto será:
 - `Controller`
 - `Repository`
 - `Model`
-
 
 ## 🔍 Endpoints
 
@@ -138,7 +139,7 @@ A `divisão` de camadas do projeto será:
 
 ---
 
-### Adicionar uma aeronave ao hangar
+### Adicionar uma aeronave no hangar
 
 - **Rota:** `POST /hangars/{id}/aircrafts/{id}`
 - **Descrição:** Adiciona uma aeronave em um hangar.
@@ -160,9 +161,16 @@ git clone https://github.com/jaoteus/hangar-api-spring.git
 ```
 
 Navegue até o diretório do projeto:
-cd oficina-carros-api
+```sh
+cd hangarapi/
+```
+Agora suba o container com o Postgres com o seguinte comando (no Linux):
+```sh
+sudo docker-compose up -d
+```
+O arquivo `docker-compose.yml` já está no projeto.
 
-Compile e execute a aplicação:
+Agora compile e execute a aplicação:
 
 ```sh
 mvn clean install
