@@ -110,7 +110,6 @@ A `divisão` de camadas do projeto será:
 
 - **Rota:** `GET /hangars/{id}`
 - **Descrição:** Retorna um hangar juntamente com todas as aeronaves que possuem no hangar.
-- **Exemplo de Cadastro:**
 
 <!-- ![rota post swagger](https://github.com/lucasgm18/oficina-api/assets/127359287/0c43005b-d6a3-4667-9973-c7011afbcbd4) -->
 
@@ -178,7 +177,7 @@ mvn spring-boot:run
 ```
 
 
-📄 Licença
+### 📄 Licença
 Este projeto está licenciado sob a Licença MIT. Veja o arquivo LICENSE para mais detalais.
 
 ---
