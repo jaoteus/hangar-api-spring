@@ -182,7 +182,9 @@ A `divisão` de camadas do projeto será:
 - **Rota:** `DELETE /hangars/{id}`
 - **Descrição:** Deleta um hangar pelo id.
 
-![Screenshot from 2024-05-30 20-12-28](https://github.com/jaoteus/hangar-api-spring/assets/128613422/4e33210e-f81e-4f27-b77a-7e80b08f7bfa)
+![Screenshot from 2024-05-30 20-55-33](https://github.com/jaoteus/hangar-api-spring/assets/128613422/3785b58a-9eaf-49a6-b2a8-4d7a35521147)
+
+![Screenshot from 2024-05-30 20-56-24](https://github.com/jaoteus/hangar-api-spring/assets/128613422/9b633206-ba75-494d-8dd3-7d4502ecb609)
 
 ---
 
