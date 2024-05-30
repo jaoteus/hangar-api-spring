@@ -63,6 +63,7 @@ A `divisão` de camadas do projeto será:
 - **Descrição:** Retorna uma lista com todas as aeronaves adicionadas.
 
 <!-- ![resultado rota get](https://github.com/lucasgm18/oficina-api/assets/127359287/ce05c88e-01e4-4d65-9dd4-d3d47b8cb211) -->
+![get all aircrafts](https://github.com/jaoteus/hangar-api-spring/assets/128613422/1222473e-3bab-4d04-bd7b-1cab33f75a42)
 
 ---
 
