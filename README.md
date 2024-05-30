@@ -119,6 +119,10 @@ A `divisão` de camadas do projeto será:
 - **Rota:** `DELETE /aircrafts/{id}`
 - **Descrição:** Deleta uma aeronave pelo id.
 
+![Screenshot from 2024-05-30 19-56-07](https://github.com/jaoteus/hangar-api-spring/assets/128613422/e514eae4-5fe4-479b-988c-3730603bb534)
+
+![Screenshot from 2024-05-30 19-56-39](https://github.com/jaoteus/hangar-api-spring/assets/128613422/8c200d6e-cd52-40d5-8b17-1aad1f7a61ec)
+
 ---
 
 ### Consultar todos os hangares
@@ -128,9 +132,7 @@ A `divisão` de camadas do projeto será:
 <!-- 
 ![resultado rota get](https://github.com/lucasgm18/oficina-api/assets/127359287/ce05c88e-01e4-4d65-9dd4-d3d47b8cb211) -->
 
-![Screenshot from 2024-05-30 19-56-07](https://github.com/jaoteus/hangar-api-spring/assets/128613422/e514eae4-5fe4-479b-988c-3730603bb534)
-
-![Screenshot from 2024-05-30 19-56-39](https://github.com/jaoteus/hangar-api-spring/assets/128613422/8c200d6e-cd52-40d5-8b17-1aad1f7a61ec)
+![Screenshot from 2024-05-30 19-59-27](https://github.com/jaoteus/hangar-api-spring/assets/128613422/aa318344-535d-4d2e-a5c7-d76b9c0390cc)
 
 ---
 
@@ -141,6 +143,19 @@ A `divisão` de camadas do projeto será:
 
 <!-- ![rota post swagger](https://github.com/lucasgm18/oficina-api/assets/127359287/0c43005b-d6a3-4667-9973-c7011afbcbd4) -->
 
+![Screenshot from 2024-05-30 19-59-39](https://github.com/jaoteus/hangar-api-spring/assets/128613422/4a277626-62aa-4e31-89e8-39feb496c1be)
+
+
+---
+
+### Adicionar um hangar
+
+- **Rota:** `POST /hangars`
+- **Descrição:** Adiciona um hangar.
+
+![Screenshot from 2024-05-30 20-07-53](https://github.com/jaoteus/hangar-api-spring/assets/128613422/90c7d96c-1c1c-4ffd-957b-ee3b9ccc2c56)
+
+![Screenshot from 2024-05-30 20-08-19](https://github.com/jaoteus/hangar-api-spring/assets/128613422/7bb25a20-2e0e-41fc-97e4-41f4a8059dde)
 
 ---
 
@@ -156,6 +171,9 @@ A `divisão` de camadas do projeto será:
 
 ![ROTA PUT PT2](https://github.com/lucasgm18/oficina-api/assets/127359287/62c262c0-5766-4aa8-933b-dcdffff1ec14) -->
 
+![Screenshot from 2024-05-30 20-01-32](https://github.com/jaoteus/hangar-api-spring/assets/128613422/04b4bbce-fac2-4f31-8586-3b56e028387c)
+
+![Screenshot from 2024-05-30 20-05-01](https://github.com/jaoteus/hangar-api-spring/assets/128613422/b5bc06a6-0374-4a9c-af58-ca96cc21d2d5)
 
 ---
 
@@ -164,12 +182,19 @@ A `divisão` de camadas do projeto será:
 - **Rota:** `DELETE /hangars/{id}`
 - **Descrição:** Deleta um hangar pelo id.
 
+![Screenshot from 2024-05-30 20-12-28](https://github.com/jaoteus/hangar-api-spring/assets/128613422/4e33210e-f81e-4f27-b77a-7e80b08f7bfa)
+
 ---
+
 
 ### Adicionar uma aeronave no hangar
 
 - **Rota:** `POST /hangars/{id}/aircrafts/{id}`
 - **Descrição:** Adiciona uma aeronave em um hangar.
+
+![Screenshot from 2024-05-30 20-11-45](https://github.com/jaoteus/hangar-api-spring/assets/128613422/6514c028-d800-4069-bb55-9b4c3d6e0ec5)
+
+![Screenshot from 2024-05-30 20-12-08](https://github.com/jaoteus/hangar-api-spring/assets/128613422/22e45fa5-01ea-4645-9cd7-dc8bb46b7484)
 
 ---
 
@@ -177,6 +202,11 @@ A `divisão` de camadas do projeto será:
 
 - **Rota:** `DELETE /hangars/{id}/aircrafts/{id}`
 - **Descrição:** Remove uma aeronave do hangar.
+
+![Screenshot from 2024-05-30 20-12-28](https://github.com/jaoteus/hangar-api-spring/assets/128613422/167c784e-1ef8-4178-8214-1c0308993e97)
+
+![Screenshot from 2024-05-30 20-12-43](https://github.com/jaoteus/hangar-api-spring/assets/128613422/8c68ec76-4dcc-4235-9d9c-97124cbeb588)
+
 
 ---
 
