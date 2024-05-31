@@ -62,8 +62,6 @@ A `divisão` de camadas do projeto será:
 - **Rota:** `GET /aircrafts`
 - **Descrição:** Retorna uma lista com todas as aeronaves adicionadas.
 
-<!-- ![resultado rota get](https://github.com/lucasgm18/oficina-api/assets/127359287/ce05c88e-01e4-4d65-9dd4-d3d47b8cb211) -->
-
 Observe que nós iremos receber uma lista com todas as aeronaves:
 
 ![get all aircrafts](https://github.com/jaoteus/hangar-api-spring/assets/128613422/1222473e-3bab-4d04-bd7b-1cab33f75a42)
@@ -76,8 +74,6 @@ Observe que nós iremos receber uma lista com todas as aeronaves:
 - **Descrição:** Retorna uma aeronave.
 - **Exemplo:**
 
-<!-- ![rota post swagger](https://github.com/lucasgm18/oficina-api/assets/127359287/0c43005b-d6a3-4667-9973-c7011afbcbd4) -->
-
 Observe que, diferente da requisição que nós fizemos anteriormente, desta vez ele retornou  apenas uma aeronave, caso não exista uma aeronave com o id que você passou, você irá receber o erro de Not Found.
 
 ![Screenshot from 2024-05-30 19-50-38](https://github.com/jaoteus/hangar-api-spring/assets/128613422/a1d19512-7bdd-49ed-aad2-40916020d09e)
@@ -88,13 +84,7 @@ Observe que, diferente da requisição que nós fizemos anteriormente, desta vez
 
 - **Rota:** `POST /aircrafts`
 - **Descrição:** Adiciona uma nova aeronave.
-- **Parâmetros de Rota:**
-    - `vin`: O número de identificação do veículo.
 - **Exemplo:**
-
-<!-- ![ROTA PUT PT1](https://github.com/lucasgm18/oficina-api/assets/127359287/cc9ce197-4a32-401f-a73e-9c1c44dfff09)
-
-![ROTA PUT PT2](https://github.com/lucasgm18/oficina-api/assets/127359287/62c262c0-5766-4aa8-933b-dcdffff1ec14) -->
 
 Nesta requisição nós iremos adicionar uma nova aeronave, mas preste a atenção no campo `aircraftStatus` que está como `IN_MAINTENANCE`, pois nós iremos citar ela futuramente.
 
@@ -110,13 +100,7 @@ Iremos fazer outra requisição para obter todas as aeronaves, e perceba que a a
 
 - **Rota:** `PUT /aircrafts/{id}`
 - **Descrição:** Atualiza os campos da aeronave pelo id.
-- **Parâmetros de Rota:**
-    - `vin`: O número de identificação do veículo.
-- **Exemplo de Alteração:**
-
-<!-- ![ROTA PUT PT1](https://github.com/lucasgm18/oficina-api/assets/127359287/cc9ce197-4a32-401f-a73e-9c1c44dfff09)
-
-![ROTA PUT PT2](https://github.com/lucasgm18/oficina-api/assets/127359287/62c262c0-5766-4aa8-933b-dcdffff1ec14) -->
+- **Exemplo:**
 
 Agora nós iremos atualizar a aeronave que nós adicionamos anteriormente, você provavelmente percebeu que quando nós adicionamos esta aeronave, o campo `aircraftStatus` estava como `IN_MAINTENANCE`, mas agora nós iremos colocar este campo como
 `ACTIVE`:
@@ -148,8 +132,6 @@ Iremos fazer outra requisição `GET`, mas desta vez nós iremos obter todas as 
 
 - **Rota:** `GET /hangars`
 - **Descrição:** Retorna uma lista com todos os hangares adicionados juntamente com todas as aeronaves que possuem no hangar.
-<!-- 
-![resultado rota get](https://github.com/lucasgm18/oficina-api/assets/127359287/ce05c88e-01e4-4d65-9dd4-d3d47b8cb211) -->
 
 Observe que nós iremos receber uma lista com todos os hangares e todas as aeronaves que o hangar possui:
 
@@ -161,8 +143,6 @@ Observe que nós iremos receber uma lista com todos os hangares e todas as aeron
 
 - **Rota:** `GET /hangars/{id}`
 - **Descrição:** Retorna um hangar juntamente com todas as aeronaves que possuem no hangar.
-
-<!-- ![rota post swagger](https://github.com/lucasgm18/oficina-api/assets/127359287/0c43005b-d6a3-4667-9973-c7011afbcbd4) -->
 
 Diferente da requisição anterior, esta requisição irá retornar apenas um hangar, se não existir um hangar com o id que você passou, você irá receber um erro de Not Found.
 
@@ -191,13 +171,7 @@ Olhe para o campo `aircrafts`, temos uma lista vazia, pois ainda não adicionamo
 
 - **Rota:** `PUT /hangars/{id}`
 - **Descrição:** Atualiza os campos do hangar pelo id.
-- **Parâmetros de Rota:**
-    - `vin`: O número de identificação do veículo.
-- **Exemplo de Alteração:**
-
-<!-- ![ROTA PUT PT1](https://github.com/lucasgm18/oficina-api/assets/127359287/cc9ce197-4a32-401f-a73e-9c1c44dfff09)
-
-![ROTA PUT PT2](https://github.com/lucasgm18/oficina-api/assets/127359287/62c262c0-5766-4aa8-933b-dcdffff1ec14) -->
+- **Exemplo:**
 
 Agora vamos atualizar o hangar que possui o id 2, que antes (eu não lhe mostrei) ele tinha o `name` igual a `Hangar Militar da Base Aérea de Anápolis`, mas agora nós iremos encurtar mais, iremos colocar apenas `Base Aérea de Anápolis`, perceba:
 
