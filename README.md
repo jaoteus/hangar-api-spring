@@ -11,8 +11,8 @@ This API allows the developer to add, update, read and delete an aircraft or Han
 ## 📚 Índice
 
 - [Recursos](#-recursos)
-- [Tecnologias Utilizadas](#tecnologias-utilizadas)
-- [Estrutura do Projeto](#estrutura-do-projeto)
+- [Tecnologias Utilizadas](#-tecnologias-utilizadas)
+- [Estrutura do Projeto](#-estrutura-do-projeto)
 - [Endpoints](#-endpoints)
     - [Consultar todas as aeronaves](#consultar-todas-as-aeronaves)
     - [Consultar uma aeronave](#consultar-uma-aeronave-por-id)
@@ -26,7 +26,7 @@ This API allows the developer to add, update, read and delete an aircraft or Han
     - [Adicionar uma aeronave no hangar](#adicionar-uma-aeronave-no-hangar)
     - [Remover uma aeronave do hangar](#remover-uma-aeronave-do-hangar)
     - [Remover um hangar](#deletar-um-hangar-por-id)
-- [Como Executar](#como-executar)
+- [Como Executar](#-como-executar)
 - [Licença](#-licença)
 
 ## 🛠 Recursos
