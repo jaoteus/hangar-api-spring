@@ -151,6 +151,8 @@ Iremos fazer outra requisição `GET`, mas desta vez nós iremos obter todas as 
 <!-- 
 ![resultado rota get](https://github.com/lucasgm18/oficina-api/assets/127359287/ce05c88e-01e4-4d65-9dd4-d3d47b8cb211) -->
 
+Observe que nós iremos receber uma lista com todos os hangares e todas as aeronaves que o hangar possui:
+
 ![Screenshot from 2024-05-30 19-59-27](https://github.com/jaoteus/hangar-api-spring/assets/128613422/aa318344-535d-4d2e-a5c7-d76b9c0390cc)
 
 ---
@@ -162,6 +164,8 @@ Iremos fazer outra requisição `GET`, mas desta vez nós iremos obter todas as 
 
 <!-- ![rota post swagger](https://github.com/lucasgm18/oficina-api/assets/127359287/0c43005b-d6a3-4667-9973-c7011afbcbd4) -->
 
+Diferente da requisição anterior, esta requisição irá retornar apenas um hangar, se não existir um hangar com o id que você passou, você irá receber um erro de Not Found.
+
 ![Screenshot from 2024-05-30 19-59-39](https://github.com/jaoteus/hangar-api-spring/assets/128613422/4a277626-62aa-4e31-89e8-39feb496c1be)
 
 
@@ -172,7 +176,12 @@ Iremos fazer outra requisição `GET`, mas desta vez nós iremos obter todas as 
 - **Rota:** `POST /hangars`
 - **Descrição:** Adiciona um hangar.
 
+Nesta requisição, nós iremos adicionar um hangar:
+
 ![Screenshot from 2024-05-30 20-07-53](https://github.com/jaoteus/hangar-api-spring/assets/128613422/90c7d96c-1c1c-4ffd-957b-ee3b9ccc2c56)
+
+Agora vamos checar se realmente nós conseguimos criar o hangar, bora fazer outra requisição `GET` para retornar todos os hangares.
+Olhe para o campo `aircrafts`, temos uma lista vazia, pois ainda não adicionamos nenhuma aeronave, mas isso irá mudar, fique ligado :).
 
 ![Screenshot from 2024-05-30 20-08-19](https://github.com/jaoteus/hangar-api-spring/assets/128613422/7bb25a20-2e0e-41fc-97e4-41f4a8059dde)
 
@@ -190,30 +199,26 @@ Iremos fazer outra requisição `GET`, mas desta vez nós iremos obter todas as 
 
 ![ROTA PUT PT2](https://github.com/lucasgm18/oficina-api/assets/127359287/62c262c0-5766-4aa8-933b-dcdffff1ec14) -->
 
+Agora vamos atualizar o hangar que possui o id 2, que antes (eu não lhe mostrei) ele tinha o `name` igual a `Hangar Militar da Base Aérea de Anápolis`, mas agora nós iremos encurtar mais, iremos colocar apenas `Base Aérea de Anápolis`, perceba:
+
 ![Screenshot from 2024-05-30 20-01-32](https://github.com/jaoteus/hangar-api-spring/assets/128613422/04b4bbce-fac2-4f31-8586-3b56e028387c)
+
+Iremos fazer outra requisição `GET` para obter especificamente o hangar com o id 2, você consegue ver que o campo foi atualizado com sucesso:
 
 ![Screenshot from 2024-05-30 20-05-01](https://github.com/jaoteus/hangar-api-spring/assets/128613422/b5bc06a6-0374-4a9c-af58-ca96cc21d2d5)
 
 ---
-
-### Deletar um hangar por id
-
-- **Rota:** `DELETE /hangars/{id}`
-- **Descrição:** Deleta um hangar pelo id.
-
-![Screenshot from 2024-05-30 20-55-33](https://github.com/jaoteus/hangar-api-spring/assets/128613422/3785b58a-9eaf-49a6-b2a8-4d7a35521147)
-
-![Screenshot from 2024-05-30 20-56-24](https://github.com/jaoteus/hangar-api-spring/assets/128613422/9b633206-ba75-494d-8dd3-7d4502ecb609)
-
----
-
 
 ### Adicionar uma aeronave no hangar
 
 - **Rota:** `POST /hangars/{id}/aircrafts/{id}`
 - **Descrição:** Adiciona uma aeronave em um hangar.
 
+Nesta requisição, iremos adicionar uma aeronave que possui o id 10 no hangar que possui o id 4 (o hangar que nós adicionamos anteriormente):
+
 ![Screenshot from 2024-05-30 20-11-45](https://github.com/jaoteus/hangar-api-spring/assets/128613422/6514c028-d800-4069-bb55-9b4c3d6e0ec5)
+
+Lembra que antes o nosso campo `aircrafts` estava com uma lista vazia ? Agora não está mais, pois acabamos de adicionar uma aeronave.
 
 ![Screenshot from 2024-05-30 20-12-08](https://github.com/jaoteus/hangar-api-spring/assets/128613422/22e45fa5-01ea-4645-9cd7-dc8bb46b7484)
 
@@ -224,10 +229,29 @@ Iremos fazer outra requisição `GET`, mas desta vez nós iremos obter todas as 
 - **Rota:** `DELETE /hangars/{id}/aircrafts/{id}`
 - **Descrição:** Remove uma aeronave do hangar.
 
+Para remover uma aeronave, a rota é a mesma da anterior, a diferença é que agora o tipo da requisição é `DELETE`, ou seja, agora nós estamos removendo a aeronave que possui id 10, do nosso hangar que possui id 4:
+
 ![Screenshot from 2024-05-30 20-12-28](https://github.com/jaoteus/hangar-api-spring/assets/128613422/167c784e-1ef8-4178-8214-1c0308993e97)
+
+Agora o campo `aircrafts` voltou a ser uma lista vazia, pois nós acabamos de remover uma aeronave:
 
 ![Screenshot from 2024-05-30 20-12-43](https://github.com/jaoteus/hangar-api-spring/assets/128613422/8c68ec76-4dcc-4235-9d9c-97124cbeb588)
 
+
+---
+
+### Deletar um hangar por id
+
+- **Rota:** `DELETE /hangars/{id}`
+- **Descrição:** Deleta um hangar pelo id.
+
+Nesta requisição, nós iremos remover o hangar que nós adicionamos inicialmente, que possui o id 4:
+
+![Screenshot from 2024-05-30 20-55-33](https://github.com/jaoteus/hangar-api-spring/assets/128613422/3785b58a-9eaf-49a6-b2a8-4d7a35521147)
+
+Agora, iremos fazer outra requisição `GET`, e perceba que o hangar não está presente, pois nós acabamos de remover:
+
+![Screenshot from 2024-05-30 20-56-24](https://github.com/jaoteus/hangar-api-spring/assets/128613422/9b633206-ba75-494d-8dd3-7d4502ecb609)
 
 ---
 
