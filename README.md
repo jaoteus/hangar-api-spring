@@ -10,15 +10,24 @@ This API allows the developer to add, update, read and delete an aircraft or Han
 
 ## 📚 Índice
 
-- [Recursos](#recursos)
+- [Recursos](#-recursos)
 - [Tecnologias Utilizadas](#tecnologias-utilizadas)
 - [Estrutura do Projeto](#estrutura-do-projeto)
-- [Endpoints](#endpoints)
-    - [Consultar todos os carros](#consultar-todos-os-carros)
-    - [Cadastrar um novo carro](#cadastrar-um-novo-carro)
-    - [Alterar a placa de um carro](#alterar-a-placa-de-um-carro)
+- [Endpoints](#-endpoints)
+    - [Consultar todas as aeronaves](#consultar-todas-as-aeronaves)
+    - [Consultar uma aeronave](#consultar-uma-aeronave-por-id)
+    - [Atualizar uma aeronave](#atualizar-uma-aeronave-por-id)
+    - [Adicionar uma nova aeronave](#adicionar-uma-aeronave)
+    - [Deletar uma aeronave](#deletar-uma-aeronave-por-id)
+    - [Consultar todos os hangares](#consultar-todos-os-hangares)
+    - [Consultar um hangar](#consultar-um-hangar-por-id)
+    - [Adicionar um hangar](#adicionar-um-hangar)
+    - [Atualizar um hangar](#atualizar-um-hangar-por-id)
+    - [Adicionar uma aeronave no hangar](#adicionar-uma-aeronave-no-hangar)
+    - [Remover uma aeronave do hangar](#remover-uma-aeronave-do-hangar)
+    - [Remover um hangar](#deletar-um-hangar-por-id)
 - [Como Executar](#como-executar)
-- [Licença](#licença)
+- [Licença](#-licença)
 
 ## 🛠 Recursos
 
@@ -29,6 +38,7 @@ This API allows the developer to add, update, read and delete an aircraft or Han
 - Deletar uma aeronave.
 - Consultar todos os hangares.
 - Consultar um hangar.
+- Adicionar um hangar.
 - Atualizar um hangar.
 - Deletar um hangar.
 - Adicionar uma aeronave no hangar.
@@ -43,8 +53,6 @@ This API allows the developer to add, update, read and delete an aircraft or Han
 - Spring Web
 - Hibernate
 - Docker
-- Git
-
 
 ## 📂 Estrutura do Projeto
 
@@ -255,6 +263,6 @@ mvn spring-boot:run
 
 
 ### 📄 Licença
-Este projeto está licenciado sob a Licença MIT. Veja o arquivo LICENSE para mais detalais.
+Este projeto está licenciado sob a Licença MIT. Veja o arquivo LICENSE para mais detalhes.
 
 ---
