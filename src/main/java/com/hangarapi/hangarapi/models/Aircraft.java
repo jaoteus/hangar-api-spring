@@ -30,25 +30,25 @@ public class Aircraft implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
-    @Column(unique = true, name = "aircraft_registration")
+    @Column(unique = true, name = "aircraft_registration", nullable = false)
     private String aircraftRegistration;
-    @Column(name = "manufacturer")
+    @Column(name = "manufacturer", nullable = false)
     private String manufacturer;
-    @Column(name = "model")
+    @Column(name = "model", nullable = false)
     private String model;
     @Column(name = "aircraft_type")
     private AircraftType aircraftType;
     @Column(name = "aircraft_status")
     private AircraftStatus aircraftStatus;
-    @Column(name = "engine_type")
+    @Column(name = "engine_type", nullable = false)
     private EngineType engineType;
 
     // basic physical characteristics
-    @Column(name = "length")
+    @Column(name = "length", nullable = false)
     private String length;
-    @Column(name = "height")
+    @Column(name = "height", nullable = false)
     private String height;
-    @Column(name = "weight")
+    @Column(name = "weight", nullable = false)
     private String weight;
     @Column(name = "maximum_takeoff_weight")
     private String maximumTakeOffWeight;

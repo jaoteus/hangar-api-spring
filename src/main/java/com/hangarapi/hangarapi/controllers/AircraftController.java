@@ -86,9 +86,9 @@ public class AircraftController {
             updatedAircraft.setModel(aircraftDetails.getModel());
             updatedAircraft.setAircraftRegistration(aircraftDetails.getAircraftRegistration());
 
-            if (aircraftRepository.findByAircraftRegistration(updatedAircraft.getAircraftRegistration()).isPresent()) {
-                return ResponseEntity.badRequest().body(null);
-            }
+//            if (aircraftRepository.findByAircraftRegistration(updatedAircraft.getAircraftRegistration()).isPresent()) {
+//                return ResponseEntity.badRequest().body(null);
+//            }
             return ResponseEntity.ok(aircraftRepository.save(updatedAircraft));
         } else {
             return ResponseEntity.notFound().build();
@@ -98,9 +98,9 @@ public class AircraftController {
     // create an aircraft
     @PostMapping
     public ResponseEntity<Aircraft> createAircraft(@RequestBody Aircraft aircraft) {
-        if (aircraftRepository.findByAircraftRegistration(aircraft.getAircraftRegistration()).isPresent()) {
-            return ResponseEntity.badRequest().body(null);
-        }
+//        if (aircraftRepository.findByAircraftRegistration(aircraft.getAircraftRegistration()).isPresent()) {
+//            return ResponseEntity.badRequest().body(null);
+//        }
         aircraftRepository.save(aircraft);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(aircraft.getId()).toUri();
         return ResponseEntity.created(uri).body(aircraft);
