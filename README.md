@@ -63,6 +63,9 @@ A `divisão` de camadas do projeto será:
 - **Descrição:** Retorna uma lista com todas as aeronaves adicionadas.
 
 <!-- ![resultado rota get](https://github.com/lucasgm18/oficina-api/assets/127359287/ce05c88e-01e4-4d65-9dd4-d3d47b8cb211) -->
+
+Observe que nós iremos receber uma lista com todas as aeronaves:
+
 ![get all aircrafts](https://github.com/jaoteus/hangar-api-spring/assets/128613422/1222473e-3bab-4d04-bd7b-1cab33f75a42)
 
 ---
@@ -74,6 +77,9 @@ A `divisão` de camadas do projeto será:
 - **Exemplo:**
 
 <!-- ![rota post swagger](https://github.com/lucasgm18/oficina-api/assets/127359287/0c43005b-d6a3-4667-9973-c7011afbcbd4) -->
+
+Observe que, diferente da requisição que nós fizemos anteriormente, desta vez ele retornou  apenas uma aeronave, caso não exista uma aeronave com o id que você passou, você irá receber o erro de Not Found.
+
 ![Screenshot from 2024-05-30 19-50-38](https://github.com/jaoteus/hangar-api-spring/assets/128613422/a1d19512-7bdd-49ed-aad2-40916020d09e)
 
 ---
@@ -90,7 +96,11 @@ A `divisão` de camadas do projeto será:
 
 ![ROTA PUT PT2](https://github.com/lucasgm18/oficina-api/assets/127359287/62c262c0-5766-4aa8-933b-dcdffff1ec14) -->
 
+Nesta requisição nós iremos adicionar uma nova aeronave, mas preste a atenção no campo `aircraftStatus` que está como `IN_MAINTENANCE`, pois nós iremos citar ela futuramente.
+
 ![Screenshot from 2024-05-30 19-52-56](https://github.com/jaoteus/hangar-api-spring/assets/128613422/83b18ce3-4e15-4133-af0d-f69bb639da4b)
+
+Iremos fazer outra requisição para obter todas as aeronaves, e perceba que a aeronave que nós adicionamos anteriormente já está salva e ela é a última da lista, guarde esta informação:
 
 ![Screenshot from 2024-05-30 19-53-45](https://github.com/jaoteus/hangar-api-spring/assets/128613422/3c7e98b4-baf3-4aa6-a315-c7846e33a8d4)
 
@@ -108,7 +118,12 @@ A `divisão` de camadas do projeto será:
 
 ![ROTA PUT PT2](https://github.com/lucasgm18/oficina-api/assets/127359287/62c262c0-5766-4aa8-933b-dcdffff1ec14) -->
 
+Agora nós iremos atualizar a aeronave que nós adicionamos anteriormente, você provavelmente percebeu que quando nós adicionamos esta aeronave, o campo `aircraftStatus` estava como `IN_MAINTENANCE`, mas agora nós iremos colocar este campo como
+`ACTIVE`:
+
 ![Screenshot from 2024-05-30 19-54-58](https://github.com/jaoteus/hangar-api-spring/assets/128613422/9bf47567-c437-46dd-814b-8951ca94c92f)
+
+Iremos fazer outra requisição `GET`, mas desta vez, estamos procuramos especificamente pelo id da aeronave que nós adicionamos e acabamos de atualizar:
 
 ![Screenshot from 2024-05-30 19-55-13](https://github.com/jaoteus/hangar-api-spring/assets/128613422/b10e412d-2d36-47a3-ad8c-76c66bf274c8)
 
@@ -119,7 +134,11 @@ A `divisão` de camadas do projeto será:
 - **Rota:** `DELETE /aircrafts/{id}`
 - **Descrição:** Deleta uma aeronave pelo id.
 
+Agora nós iremos deletar a aeronave que nós adicionamos e atualizamos anteriormente:
+
 ![Screenshot from 2024-05-30 19-56-07](https://github.com/jaoteus/hangar-api-spring/assets/128613422/e514eae4-5fe4-479b-988c-3730603bb534)
+
+Iremos fazer outra requisição `GET`, mas desta vez nós iremos obter todas as aeronaves, e você pode perceber que antes, a aeronave com id 10, que foi a que noś acabamos de apagar, ela estava na última da lista, mas agora não está mais, pois noś acabamos de apagar:
 
 ![Screenshot from 2024-05-30 19-56-39](https://github.com/jaoteus/hangar-api-spring/assets/128613422/8c200d6e-cd52-40d5-8b17-1aad1f7a61ec)
 
