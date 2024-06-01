@@ -29,9 +29,7 @@ public class AircraftService {
         try {
             aircraftRepository.save(aircraft);
         } catch (DataIntegrityViolationException e) {
-            throw new IntegrityViolationException(e.getMessage());
-        } catch (RuntimeException e) {
-            throw new RuntimeException(e.getMessage());
+            throw new DataIntegrityViolationException(e.getMessage());
         }
     }
 
@@ -45,7 +43,7 @@ public class AircraftService {
 
         try {
             aircraftRepository.save(aircraftToUpdate);
-        } catch (RuntimeException e) {
+        } catch (DataIntegrityViolationException e) {
             e.printStackTrace();
         }
     }

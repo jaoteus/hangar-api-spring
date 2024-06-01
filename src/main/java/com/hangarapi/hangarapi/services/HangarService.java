@@ -1,5 +1,6 @@
 package com.hangarapi.hangarapi.services;
 
+import com.hangarapi.hangarapi.exceptions.HangarNotEmptyException;
 import com.hangarapi.hangarapi.exceptions.HangarNotFoundException;
 import com.hangarapi.hangarapi.models.Aircraft;
 import com.hangarapi.hangarapi.models.Hangar;
@@ -8,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class HangarService {
@@ -15,7 +17,9 @@ public class HangarService {
     @Autowired
     private HangarRepository hangarRepository;
 
-    // we will use this method to search an aircraft by id
+    @Autowired
+    private AircraftService aircraftService;
+
     public Hangar findOne(Long id) {
         return hangarRepository.findById(id).orElseThrow(() -> new HangarNotFoundException("Hangar with id " + id + " not found"));
     }
@@ -25,30 +29,34 @@ public class HangarService {
     }
 
     public void insertOne(Hangar hangar) {
-        try {
-            hangarRepository.save(hangar);
-        } catch (RuntimeException e) {
-            e.printStackTrace();
-        }
+        hangarRepository.save(hangar);
     }
 
     public void updateOne(Long id, Hangar hangar) {
         Hangar hangarToUpdate = findOne(id);
         hangarToUpdate.setName(hangar.getName());
-
-        try {
-            hangarRepository.save(hangarToUpdate);
-        } catch (RuntimeException e) {
-            e.printStackTrace();
-        }
+        hangarRepository.save(hangarToUpdate);
     }
 
     public void deleteOne(Long id) {
         Hangar hangarToDelete = findOne(id);
-        try {
-            hangarRepository.delete(hangarToDelete);
-        } catch (RuntimeException e) {
-            e.printStackTrace();
+        if (!hangarToDelete.getAircrafts().isEmpty()) {
+            throw new HangarNotEmptyException("The hangar is not empty, try removing all aircrafts before to do this action");
         }
+        hangarRepository.delete(hangarToDelete);
+    }
+
+    public void insertAnAircraftInHangar(Long aircraftId, Long hangarId) {
+        Aircraft aircraftToInsert = aircraftService.findOne(aircraftId);
+        Hangar hangar = findOne(hangarId);
+        hangar.addAircraft(aircraftToInsert);
+        hangarRepository.save(hangar);
+    }
+
+    public void deleteAnAircraftInHangar(Long aircraftId, Long hangarId) {
+        Aircraft aircraftToDelete = aircraftService.findOne(aircraftId);
+        Hangar hangar = findOne(hangarId);
+        hangar.removeAircraft(aircraftToDelete);
+        hangarRepository.save(hangar);
     }
 }

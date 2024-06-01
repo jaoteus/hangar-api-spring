@@ -227,18 +227,18 @@ public class TestConfig implements CommandLineRunner {
 
         //  adding some comercial aircrafts in hangar1
         hangar1.addAircraft(aircraft1);
-        hangar1.addAircraft(aircraft2);
-        hangar1.addAircraft(aircraft3);
+//        hangar1.addAircraft(aircraft2);
+//        hangar1.addAircraft(aircraft3);
 
         // adding some military aircrafts in hangar2
         hangar2.addAircraft(aircraft4);
-        hangar2.addAircraft(aircraft5);
-        hangar2.addAircraft(aircraft6);
+//        hangar2.addAircraft(aircraft5);
+//        hangar2.addAircraft(aircraft6);
 
         //  adding some comercial aircrafts with turboshaft engine
         hangar3.addAircraft(aircraft7);
-        hangar3.addAircraft(aircraft8);
-        hangar3.addAircraft(aircraft9);
+//        hangar3.addAircraft(aircraft8);
+//        hangar3.addAircraft(aircraft9);
 
         // saving all hangars
         hangarRepository.save(hangar1);
