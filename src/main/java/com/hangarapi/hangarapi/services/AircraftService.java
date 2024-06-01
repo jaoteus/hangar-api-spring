@@ -1,9 +1,11 @@
 package com.hangarapi.hangarapi.services;
 
 import com.hangarapi.hangarapi.exceptions.AircraftNotFoundException;
+import com.hangarapi.hangarapi.exceptions.IntegrityViolationException;
 import com.hangarapi.hangarapi.models.Aircraft;
 import com.hangarapi.hangarapi.repositories.AircraftRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -26,8 +28,10 @@ public class AircraftService {
     public void insertOne(Aircraft aircraft) {
         try {
             aircraftRepository.save(aircraft);
+        } catch (DataIntegrityViolationException e) {
+            throw new IntegrityViolationException(e.getMessage());
         } catch (RuntimeException e) {
-            e.printStackTrace();
+            throw new RuntimeException(e.getMessage());
         }
     }
 
