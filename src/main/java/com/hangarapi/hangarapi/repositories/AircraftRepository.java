@@ -9,4 +9,5 @@ import java.util.Optional;
 
 @Repository
 public interface AircraftRepository extends JpaRepository<Aircraft, Long> {
+    Aircraft findByAircraftRegistration(String aircraftRegistration);
 }

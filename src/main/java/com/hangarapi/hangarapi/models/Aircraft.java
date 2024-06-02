@@ -241,11 +241,11 @@ public class Aircraft implements Serializable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Aircraft aircraft = (Aircraft) o;
-        return Objects.equals(aircraftRegistration, aircraft.aircraftRegistration);
+        return Objects.equals(id, aircraft.id) && Objects.equals(aircraftRegistration, aircraft.aircraftRegistration);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hashCode(aircraftRegistration);
+        return Objects.hash(id, aircraftRegistration);
     }
 }

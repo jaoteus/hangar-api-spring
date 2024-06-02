@@ -33,4 +33,9 @@ public class GlobalExceptionHandler {
         return new ResponseEntity<String>(e.getMessage(), HttpStatus.BAD_REQUEST);
     }
 
+    @ExceptionHandler(AircraftRegistrationAlreadyExistsException.class)
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    public ResponseEntity<String> aircraftRegistrationAlreadyExists(AircraftRegistrationAlreadyExistsException e) {
+        return new ResponseEntity<String>(e.getMessage(), HttpStatus.BAD_REQUEST);
+    }
 }

@@ -1,6 +1,7 @@
 package com.hangarapi.hangarapi.services;
 
 import com.hangarapi.hangarapi.exceptions.AircraftNotFoundException;
+import com.hangarapi.hangarapi.exceptions.AircraftRegistrationAlreadyExistsException;
 import com.hangarapi.hangarapi.exceptions.IntegrityViolationException;
 import com.hangarapi.hangarapi.models.Aircraft;
 import com.hangarapi.hangarapi.repositories.AircraftRepository;
@@ -26,34 +27,31 @@ public class AircraftService {
     }
 
     public void insertOne(Aircraft aircraft) {
-        try {
-            aircraftRepository.save(aircraft);
-        } catch (DataIntegrityViolationException e) {
-            throw new DataIntegrityViolationException(e.getMessage());
+        if (aircraftRepository.findByAircraftRegistration(aircraft.getAircraftRegistration()) != null) {
+            throw new AircraftRegistrationAlreadyExistsException("Aircraft registration already exists");
         }
+        aircraftRepository.save(aircraft);
     }
 
     public void updateOne(Long id, Aircraft aircraft) {
         Aircraft aircraftToUpdate = findOne(id);
+
         aircraftToUpdate.setAircraftStatus(aircraft.getAircraftStatus());
         aircraftToUpdate.setOperator(aircraft.getOperator());
         aircraftToUpdate.setSeatingCapacity(aircraft.getSeatingCapacity());
         aircraftToUpdate.setAircraftType(aircraft.getAircraftType());
-        aircraftToUpdate.setAircraftRegistration(aircraft.getAircraftRegistration());
 
-        try {
-            aircraftRepository.save(aircraftToUpdate);
-        } catch (DataIntegrityViolationException e) {
-            e.printStackTrace();
+        if (!aircraftToUpdate.getAircraftRegistration().equals(aircraft.getAircraftRegistration())) {
+            if (aircraftRepository.findByAircraftRegistration(aircraft.getAircraftRegistration()) != null) {
+                throw new AircraftRegistrationAlreadyExistsException("Aircraft registration already exists");
+            }
+            aircraftToUpdate.setAircraftRegistration(aircraft.getAircraftRegistration());
         }
+        aircraftRepository.save(aircraftToUpdate);
     }
 
     public void deleteOne(Long id) {
         Aircraft aircraftToDelete = findOne(id);
-        try {
-            aircraftRepository.delete(aircraftToDelete);
-        } catch (RuntimeException e) {
-            e.printStackTrace();
-        }
+        aircraftRepository.delete(aircraftToDelete);
     }
 }

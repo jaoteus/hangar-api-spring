@@ -58,10 +58,11 @@ This API allows the developer to add, update, read and delete an aircraft or Han
 
 A `divisão` de camadas do projeto será:
 
-- `config`
+- `Config`
 - `Controller`
 - `Repository`
 - `Model`
+- `Exception`
 
 ## 🔍 Endpoints
 
