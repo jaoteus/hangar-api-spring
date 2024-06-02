@@ -54,7 +54,7 @@ public class Aircraft implements Serializable {
     private String maximumTakeOffWeight;
     @Column(name = "maximum_landing_weight")
     private String maximumLandingWeight;
-    @Column(name = "operator")
+    @Column(name = "operator", nullable = false)
     private String operator;
     @Column(name = "year_built")
     private String yearBuilt;
