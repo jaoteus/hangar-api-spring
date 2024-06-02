@@ -21,12 +21,6 @@ public class GlobalExceptionHandler {
         return new ResponseEntity<String>(e.getMessage(), HttpStatus.NOT_FOUND);
     }
 
-    @ExceptionHandler(IntegrityViolationException.class)
-    @ResponseStatus(HttpStatus.BAD_REQUEST)
-    public ResponseEntity<String> dataIntegrityViolation(IntegrityViolationException e) {
-        return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
-    }
-
     @ExceptionHandler(HangarNotEmptyException.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     public ResponseEntity<String> hangarNotEmpty(HangarNotEmptyException e) {
