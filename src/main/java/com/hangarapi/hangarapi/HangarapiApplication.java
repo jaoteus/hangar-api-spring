@@ -10,3 +10,5 @@ public class HangarapiApplication {
 		SpringApplication.run(HangarapiApplication.class, args);
 	}
 }
+
+// TODO: Corrigir os erros gramaticais nos readmes
