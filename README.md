@@ -6,49 +6,49 @@ This API allows the developer to add, update, read and delete an aircraft or Han
 
 ## 🎯 Goals
 
-- Desenvolver uma API REST Java.
+- Develop an API REST with Spring.
 
 ## 📚 Index
 
-- [Recursos](#-recursos)
-- [Tecnologias Utilizadas](#-tecnologias-utilizadas)
-- [Estrutura do Projeto](#-estrutura-do-projeto)
+- [Resources](#-resources)
+- [Technologies Used](#-technologies-used)
+- [Project Structure](#-project-structure)
 - [Endpoints](#-endpoints)
-    - [Consultar todas as aeronaves](#consultar-todas-as-aeronaves)
-    - [Consultar uma aeronave](#consultar-uma-aeronave-por-id)
-    - [Atualizar uma aeronave](#atualizar-uma-aeronave-por-id)
-    - [Adicionar uma nova aeronave](#adicionar-uma-aeronave)
-    - [Deletar uma aeronave](#deletar-uma-aeronave-por-id)
-    - [Consultar todos os hangares](#consultar-todos-os-hangares)
-    - [Consultar um hangar](#consultar-um-hangar-por-id)
-    - [Adicionar um hangar](#adicionar-um-hangar)
-    - [Atualizar um hangar](#atualizar-um-hangar-por-id)
-    - [Adicionar uma aeronave no hangar](#adicionar-uma-aeronave-no-hangar)
-    - [Remover uma aeronave do hangar](#remover-uma-aeronave-do-hangar)
-    - [Remover um hangar](#deletar-um-hangar-por-id)
-- [Como Executar](#-como-executar)
-- [Licença](#-licença)
+    - [Query all aircraft](#query-all-aircraft)
+    - [Query an aircraft](#query-an-aircraft-by-id)
+    - [Update an aircraft](#update-an-aircraft-by-id)
+    - [Add an aircraft](#add-an-aircraft)
+    - [Remove an aircraft](#remove-an-aicraft-by-id)
+    - [Query all hangars](#query-all-hangars)
+    - [Query a hangar](#query-a-hangar-by-id)
+    - [Add a hangar](#add-a-hangar)
+    - [Update a hangar](#update-a-hangar-by-id)
+    - [Add an aircraft to the hangar](#add-an-aircraft-to-the-hangar)
+    - [Remove an aircraft from the hangar](#remove-an-aircraft-from-the-hangar)
+    - [Remove a hangar](#remove-a-hangar-by-id)
+- [How to Run](#-how-to-run)
+- [License](#-license)
 
-## 🛠 Recursos
+## 🛠 Resources
 
-- Consultar todas as aeronaves.
-- Consultar uma aeronave.
-- Atualizar uma aeronave.
-- Cadastrar uma nova aeronave.
-- Deletar uma aeronave.
-- Consultar todos os hangares.
-- Consultar um hangar.
-- Adicionar um hangar.
-- Atualizar um hangar.
-- Deletar um hangar.
-- Adicionar uma aeronave no hangar.
-- Remover uma aeronave do hangar.
+- Query all aircraft.
+- Query an aircraft.
+- Add an aircraft.
+- Update an aircraft.
+- Remove an aircraft.
+- Query all hangars.
+- Query a hangar.
+- Add a hangar.
+- Update a hangar.
+- Remove a hangar.
+- Add an aircraft to the hangar.
+- Remove an aircraft from the hangar.
 
 ## 🎧 Technologies Used
 
 - Java 17
 - Spring Boot 3.3.0
-- PostgreSQL
+- PostgresSQL
 - Maven
 - Spring Web
 - Hibernate
@@ -56,7 +56,7 @@ This API allows the developer to add, update, read and delete an aircraft or Han
 
 ## 📂 Project Structure
 
-A `divisão` de camadas do projeto será:
+The `division` of project layers will be:
 
 - `Config`
 - `Controller`
@@ -69,9 +69,9 @@ A `divisão` de camadas do projeto será:
 ### Query all aircraft
 
 - **Route:** `GET /aircrafts`
-- **Description:** Retorna uma lista com todas as aeronaves adicionadas.
+- **Description:** Returns a list of all added aircraft.
 
-Observe que nós iremos receber uma lista com todas as aeronaves:
+Please note that we will receive a list of all aircraft:
 
 ![get all aircraft](https://github.com/jaoteus/hangar-api-spring/assets/128613422/1222473e-3bab-4d04-bd7b-1cab33f75a42)
 
@@ -80,10 +80,10 @@ Observe que nós iremos receber uma lista com todas as aeronaves:
 ### Query an aircraft by ID
 
 - **Route:** `GET /aircrafts/{id}`
-- **Description:** Retorna uma aeronave.
+- **Description:** Return an aircraft.
 - **Example:**
 
-Observe que, diferente da requisição que nós fizemos anteriormente, desta vez ele retornou  apenas uma aeronave, caso não exista uma aeronave com o id que você passou, você irá receber o erro de Not Found.
+Note that, unlike the request we made previously, this time it only returned one aircraft. If there is no aircraft with the id you provided, you will receive a Not Found error.
 
 ![Screenshot from 2024-05-30 19-50-38](https://github.com/jaoteus/hangar-api-spring/assets/128613422/a1d19512-7bdd-49ed-aad2-40916020d09e)
 
@@ -92,14 +92,14 @@ Observe que, diferente da requisição que nós fizemos anteriormente, desta vez
 ### Add an aircraft
 
 - **Route:** `POST /aircrafts`
-- **Description:** Adiciona uma nova aeronave.
+- **Description:** Add an aircraft.
 - **Example:**
 
-Nesta requisição nós iremos adicionar uma nova aeronave, mas preste a atenção no campo `aircraftStatus` que está como `IN_MAINTENANCE`, pois nós iremos citar ela futuramente.
+In this request we will add a new aircraft, but pay attention to the `aircraftStatus` field which is set to `IN_MAINTENANCE`, as we will mention it in the future.
 
 ![Screenshot from 2024-05-30 19-52-56](https://github.com/jaoteus/hangar-api-spring/assets/128613422/83b18ce3-4e15-4133-af0d-f69bb639da4b)
 
-Iremos fazer outra requisição para obter todas as aeronaves, e perceba que a aeronave que nós adicionamos anteriormente já está salva e ela é a última da lista, guarde esta informação:
+We will make another request to obtain all the aircraft, and notice that the aircraft we added previously is already saved and it is the last one on the list, keep this information:
 
 ![Screenshot from 2024-05-30 19-53-45](https://github.com/jaoteus/hangar-api-spring/assets/128613422/3c7e98b4-baf3-4aa6-a315-c7846e33a8d4)
 
@@ -108,30 +108,30 @@ Iremos fazer outra requisição para obter todas as aeronaves, e perceba que a a
 ### Update an Aircraft by id
 
 - **Route:** `PUT /aircrafts/{id}`
-- **Description:** Atualiza os campos da aeronave pelo id.
+- **Description:** Update an aircraft.
 - **Example:**
 
-Agora nós iremos atualizar a aeronave que nós adicionamos anteriormente, você provavelmente percebeu que quando nós adicionamos esta aeronave, o campo `aircraftStatus` estava como `IN_MAINTENANCE`, mas agora nós iremos colocar este campo como
+Now we will update the aircraft that we added earlier, you probably noticed that when we added this aircraft, the `aircraftStatus` field was as `IN_MAINTENANCE`, but now we will put this field as
 `ACTIVE`:
 
 ![Screenshot from 2024-05-30 19-54-58](https://github.com/jaoteus/hangar-api-spring/assets/128613422/9bf47567-c437-46dd-814b-8951ca94c92f)
 
-Iremos fazer outra requisição `GET`, mas desta vez, estamos procuramos especificamente pelo id da aeronave que nós adicionamos e acabamos de atualizar:
+We'll make another `GET` request, but this time, we're specifically looking for the id of the aircraft we added and just updated:
 
 ![Screenshot from 2024-05-30 19-55-13](https://github.com/jaoteus/hangar-api-spring/assets/128613422/b10e412d-2d36-47a3-ad8c-76c66bf274c8)
 
 ---
 
-### Delete an Aicraft by id
+### Remove an Aicraft by id
 
 - **Route:** `DELETE /aircrafts/{id}`
-- **Description:** Deleta uma aeronave pelo id.
+- **Description:** Remove an aircraft.
 
-Agora nós iremos deletar a aeronave que nós adicionamos e atualizamos anteriormente:
+Now we will delete the aircraft that we added and updated previously:
 
 ![Screenshot from 2024-05-30 19-56-07](https://github.com/jaoteus/hangar-api-spring/assets/128613422/e514eae4-5fe4-479b-988c-3730603bb534)
 
-Iremos fazer outra requisição `GET`, mas desta vez nós iremos obter todas as aeronaves, e você pode perceber que antes, a aeronave com id 10, que foi a que noś acabamos de apagar, ela estava na última da lista, mas agora não está mais, pois noś acabamos de apagar:
+We will make another `GET` request, but this time we will get all the aircraft, and you can notice that before, the aircraft with id 10, which was the one we just deleted, was last on the list, but now it is not It's more, because we just deleted it:
 
 ![Screenshot from 2024-05-30 19-56-39](https://github.com/jaoteus/hangar-api-spring/assets/128613422/8c200d6e-cd52-40d5-8b17-1aad1f7a61ec)
 
@@ -140,9 +140,9 @@ Iremos fazer outra requisição `GET`, mas desta vez nós iremos obter todas as 
 ### Query all hangars
 
 - **Route:** `GET /hangars`
-- **Description:** Retorna uma lista com todos os hangares adicionados juntamente com todas as aeronaves que possuem no hangar.
+- **Description:** Returns a list of all the hangars added along with all the aircraft in the hangar.
 
-Observe que nós iremos receber uma lista com todos os hangares e todas as aeronaves que o hangar possui:
+Note that we will receive a list of all hangars and all aircraft that the hangar has:
 
 ![Screenshot from 2024-05-30 19-59-27](https://github.com/jaoteus/hangar-api-spring/assets/128613422/aa318344-535d-4d2e-a5c7-d76b9c0390cc)
 
@@ -151,9 +151,9 @@ Observe que nós iremos receber uma lista com todos os hangares e todas as aeron
 ### Query a hangar by id
 
 - **Route:** `GET /hangars/{id}`
-- **Description:** Retorna um hangar juntamente com todas as aeronaves que possuem no hangar.
+- **Description:** Returns a hangar along with all the aircraft in the hangar.
 
-Diferente da requisição anterior, esta requisição irá retornar apenas um hangar, se não existir um hangar com o id que você passou, você irá receber um erro de Not Found.
+Unlike the previous request, this request will only return a hangar, if there is no hangar with the id you passed, you will receive a Not Found error.
 
 ![Screenshot from 2024-05-30 19-59-39](https://github.com/jaoteus/hangar-api-spring/assets/128613422/4a277626-62aa-4e31-89e8-39feb496c1be)
 
@@ -165,12 +165,12 @@ Diferente da requisição anterior, esta requisição irá retornar apenas um ha
 - **Route:** `POST /hangars`
 - **Description:** Add a hangar.
 
-Nesta requisição, nós iremos adicionar um hangar:
+In this request, we will add a hangar:
 
 ![Screenshot from 2024-05-30 20-07-53](https://github.com/jaoteus/hangar-api-spring/assets/128613422/90c7d96c-1c1c-4ffd-957b-ee3b9ccc2c56)
 
-Agora vamos checar se realmente nós conseguimos criar o hangar, bora fazer outra requisição `GET` para retornar todos os hangares.
-Olhe para o campo `aircrafts`, temos uma lista vazia, pois ainda não adicionamos nenhuma aeronave, mas isso irá mudar, fique ligado :).
+Now let's check if we can actually create the hangar, let's make another `GET` request to return all the hangars.
+Look at the `aircrafts` field, we have an empty list as we haven't added any aircraft yet, but this will change, stay tuned :).
 
 ![Screenshot from 2024-05-30 20-08-19](https://github.com/jaoteus/hangar-api-spring/assets/128613422/7bb25a20-2e0e-41fc-97e4-41f4a8059dde)
 
@@ -182,11 +182,11 @@ Olhe para o campo `aircrafts`, temos uma lista vazia, pois ainda não adicionamo
 - **Description:** Update a hangar.
 - **Example:**
 
-Agora vamos atualizar o hangar que possui o id 2, que antes (eu não lhe mostrei) ele tinha o `name` igual a `Hangar Militar da Base Aérea de Anápolis`, mas agora nós iremos encurtar mais, iremos colocar apenas `Base Aérea de Anápolis`, perceba:
+Now let's update the hangar that has the id 2, which before (I didn't show it) it had the `name` equal to `Hangar Militar da Base Aérea de Anápolis`, but now we will shorten it further, we will just put `Base Aérea of Anápolis`, notice:
 
 ![Screenshot from 2024-05-30 20-01-32](https://github.com/jaoteus/hangar-api-spring/assets/128613422/04b4bbce-fac2-4f31-8586-3b56e028387c)
 
-Iremos fazer outra requisição `GET` para obter especificamente o hangar com o id 2, você consegue ver que o campo foi atualizado com sucesso:
+We will make another `GET` request to specifically obtain the hangar with id 2, you can see that the field was updated successfully:
 
 ![Screenshot from 2024-05-30 20-05-01](https://github.com/jaoteus/hangar-api-spring/assets/128613422/b5bc06a6-0374-4a9c-af58-ca96cc21d2d5)
 
@@ -197,11 +197,11 @@ Iremos fazer outra requisição `GET` para obter especificamente o hangar com o 
 - **Route:** `POST /hangars/{id}/aircrafts/{id}`
 - **Description:** Add an aircraft to the hangar.
 
-Nesta requisição, iremos adicionar uma aeronave que possui o id 10 no hangar que possui o id 4 (o hangar que nós adicionamos anteriormente):
+In this request, we will add an aircraft that has id 10 to the hangar that has id 4 (the hangar we added previously):
 
 ![Screenshot from 2024-05-30 20-11-45](https://github.com/jaoteus/hangar-api-spring/assets/128613422/6514c028-d800-4069-bb55-9b4c3d6e0ec5)
 
-Lembra que antes o nosso campo `aircrafts` estava com uma lista vazia ? Agora não está mais, pois acabamos de adicionar uma aeronave.
+Remember that before our `aircrafts` field had an empty list? Now it isn't anymore, as we just added an aircraft.
 
 ![Screenshot from 2024-05-30 20-12-08](https://github.com/jaoteus/hangar-api-spring/assets/128613422/22e45fa5-01ea-4645-9cd7-dc8bb46b7484)
 
@@ -212,21 +212,21 @@ Lembra que antes o nosso campo `aircrafts` estava com uma lista vazia ? Agora n�
 - **Route:** `DELETE /hangars/{id}/aircrafts/{id}`
 - **Description:** Remove an aircraft from the hangar.
 
-Para remover uma aeronave, a rota é a mesma da anterior, a diferença é que agora o tipo da requisição é `DELETE`, ou seja, agora nós estamos removendo a aeronave que possui id 10, do nosso hangar que possui id 4:
+To remove an aircraft, the route is the same as the previous one, the difference is that now the request type is `DELETE`, that is, now we are removing the aircraft that has id 10, from our hangar that has id 4:
 
 ![Screenshot from 2024-05-30 20-12-28](https://github.com/jaoteus/hangar-api-spring/assets/128613422/167c784e-1ef8-4178-8214-1c0308993e97)
 
-Agora o campo `aircrafts` voltou a ser uma lista vazia, pois nós acabamos de remover uma aeronave:
+Now the `aircrafts` field is back to an empty list, as we just removed an aircraft:
 
 ![Screenshot from 2024-05-30 20-12-43](https://github.com/jaoteus/hangar-api-spring/assets/128613422/8c68ec76-4dcc-4235-9d9c-97124cbeb588)
 
 
 ---
 
-### Delete a hangar by id
+### Remove a hangar by id
 
 - **Route:** `DELETE /hangars/{id}`
-- **Description:** Delete a hangar by id.
+- **Description:** Remove a hangar by id.
 
 In this request, we will remove the hangar that we initially added, which has id 4:
 
