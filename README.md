@@ -1,14 +1,14 @@
 # ✈️ Hangar API
 
-## 📜 Introdução
+## 📜 Introduction
 
 This API allows the developer to add, update, read and delete an aircraft or Hangar from the database. I created this AṔI just for studies and to test knowledge, it is likely that over time I will modify the code and consequently update this README.
 
-## 🎯 Objetivos
+## 🎯 Goals
 
 - Desenvolver uma API REST Java.
 
-## 📚 Índice
+## 📚 Index
 
 - [Recursos](#-recursos)
 - [Tecnologias Utilizadas](#-tecnologias-utilizadas)
@@ -44,7 +44,7 @@ This API allows the developer to add, update, read and delete an aircraft or Han
 - Adicionar uma aeronave no hangar.
 - Remover uma aeronave do hangar.
 
-## 🎧 Tecnologias Utilizadas
+## 🎧 Technologies Used
 
 - Java 17
 - Spring Boot 3.3.0
@@ -54,7 +54,7 @@ This API allows the developer to add, update, read and delete an aircraft or Han
 - Hibernate
 - Docker
 
-## 📂 Estrutura do Projeto
+## 📂 Project Structure
 
 A `divisão` de camadas do projeto será:
 
@@ -66,22 +66,22 @@ A `divisão` de camadas do projeto será:
 
 ## 🔍 Endpoints
 
-### Consultar todas as aeronaves
+### Query all aircraft
 
-- **Rota:** `GET /aircrafts`
-- **Descrição:** Retorna uma lista com todas as aeronaves adicionadas.
+- **Route:** `GET /aircrafts`
+- **Description:** Retorna uma lista com todas as aeronaves adicionadas.
 
 Observe que nós iremos receber uma lista com todas as aeronaves:
 
-![get all aircrafts](https://github.com/jaoteus/hangar-api-spring/assets/128613422/1222473e-3bab-4d04-bd7b-1cab33f75a42)
+![get all aircraft](https://github.com/jaoteus/hangar-api-spring/assets/128613422/1222473e-3bab-4d04-bd7b-1cab33f75a42)
 
 ---
 
-### Consultar uma aeronave por id
+### Query an aircraft by ID
 
-- **Rota:** `GET /aircrafts/{id}`
-- **Descrição:** Retorna uma aeronave.
-- **Exemplo:**
+- **Route:** `GET /aircrafts/{id}`
+- **Description:** Retorna uma aeronave.
+- **Example:**
 
 Observe que, diferente da requisição que nós fizemos anteriormente, desta vez ele retornou  apenas uma aeronave, caso não exista uma aeronave com o id que você passou, você irá receber o erro de Not Found.
 
@@ -89,11 +89,11 @@ Observe que, diferente da requisição que nós fizemos anteriormente, desta vez
 
 ---
 
-### Adicionar uma aeronave
+### Add an aircraft
 
-- **Rota:** `POST /aircrafts`
-- **Descrição:** Adiciona uma nova aeronave.
-- **Exemplo:**
+- **Route:** `POST /aircrafts`
+- **Description:** Adiciona uma nova aeronave.
+- **Example:**
 
 Nesta requisição nós iremos adicionar uma nova aeronave, mas preste a atenção no campo `aircraftStatus` que está como `IN_MAINTENANCE`, pois nós iremos citar ela futuramente.
 
@@ -105,11 +105,11 @@ Iremos fazer outra requisição para obter todas as aeronaves, e perceba que a a
 
 ---
 
-### Atualizar uma aeronave por id
+### Update an Aircraft by id
 
-- **Rota:** `PUT /aircrafts/{id}`
-- **Descrição:** Atualiza os campos da aeronave pelo id.
-- **Exemplo:**
+- **Route:** `PUT /aircrafts/{id}`
+- **Description:** Atualiza os campos da aeronave pelo id.
+- **Example:**
 
 Agora nós iremos atualizar a aeronave que nós adicionamos anteriormente, você provavelmente percebeu que quando nós adicionamos esta aeronave, o campo `aircraftStatus` estava como `IN_MAINTENANCE`, mas agora nós iremos colocar este campo como
 `ACTIVE`:
@@ -122,10 +122,10 @@ Iremos fazer outra requisição `GET`, mas desta vez, estamos procuramos especif
 
 ---
 
-### Deletar uma aeronave por id
+### Delete an Aicraft by id
 
-- **Rota:** `DELETE /aircrafts/{id}`
-- **Descrição:** Deleta uma aeronave pelo id.
+- **Route:** `DELETE /aircrafts/{id}`
+- **Description:** Deleta uma aeronave pelo id.
 
 Agora nós iremos deletar a aeronave que nós adicionamos e atualizamos anteriormente:
 
@@ -137,10 +137,10 @@ Iremos fazer outra requisição `GET`, mas desta vez nós iremos obter todas as 
 
 ---
 
-### Consultar todos os hangares
+### Query all hangars
 
-- **Rota:** `GET /hangars`
-- **Descrição:** Retorna uma lista com todos os hangares adicionados juntamente com todas as aeronaves que possuem no hangar.
+- **Route:** `GET /hangars`
+- **Description:** Retorna uma lista com todos os hangares adicionados juntamente com todas as aeronaves que possuem no hangar.
 
 Observe que nós iremos receber uma lista com todos os hangares e todas as aeronaves que o hangar possui:
 
@@ -148,10 +148,10 @@ Observe que nós iremos receber uma lista com todos os hangares e todas as aeron
 
 ---
 
-### Consultar um hangar por id
+### Query a hangar by id
 
-- **Rota:** `GET /hangars/{id}`
-- **Descrição:** Retorna um hangar juntamente com todas as aeronaves que possuem no hangar.
+- **Route:** `GET /hangars/{id}`
+- **Description:** Retorna um hangar juntamente com todas as aeronaves que possuem no hangar.
 
 Diferente da requisição anterior, esta requisição irá retornar apenas um hangar, se não existir um hangar com o id que você passou, você irá receber um erro de Not Found.
 
@@ -160,10 +160,10 @@ Diferente da requisição anterior, esta requisição irá retornar apenas um ha
 
 ---
 
-### Adicionar um hangar
+### Add a hangar
 
-- **Rota:** `POST /hangars`
-- **Descrição:** Adiciona um hangar.
+- **Route:** `POST /hangars`
+- **Description:** Add a hangar.
 
 Nesta requisição, nós iremos adicionar um hangar:
 
@@ -176,11 +176,11 @@ Olhe para o campo `aircrafts`, temos uma lista vazia, pois ainda não adicionamo
 
 ---
 
-### Atualizar um hangar por id
+### Update a hangar by id
 
-- **Rota:** `PUT /hangars/{id}`
-- **Descrição:** Atualiza os campos do hangar pelo id.
-- **Exemplo:**
+- **Route:** `PUT /hangars/{id}`
+- **Description:** Update a hangar.
+- **Example:**
 
 Agora vamos atualizar o hangar que possui o id 2, que antes (eu não lhe mostrei) ele tinha o `name` igual a `Hangar Militar da Base Aérea de Anápolis`, mas agora nós iremos encurtar mais, iremos colocar apenas `Base Aérea de Anápolis`, perceba:
 
@@ -192,10 +192,10 @@ Iremos fazer outra requisição `GET` para obter especificamente o hangar com o 
 
 ---
 
-### Adicionar uma aeronave no hangar
+### Add an aircraft to the hangar
 
-- **Rota:** `POST /hangars/{id}/aircrafts/{id}`
-- **Descrição:** Adiciona uma aeronave em um hangar.
+- **Route:** `POST /hangars/{id}/aircrafts/{id}`
+- **Description:** Add an aircraft to the hangar.
 
 Nesta requisição, iremos adicionar uma aeronave que possui o id 10 no hangar que possui o id 4 (o hangar que nós adicionamos anteriormente):
 
@@ -207,10 +207,10 @@ Lembra que antes o nosso campo `aircrafts` estava com uma lista vazia ? Agora n�
 
 ---
 
-### Remover uma aeronave do hangar
+### Remove an aircraft from the hangar
 
-- **Rota:** `DELETE /hangars/{id}/aircrafts/{id}`
-- **Descrição:** Remove uma aeronave do hangar.
+- **Route:** `DELETE /hangars/{id}/aircrafts/{id}`
+- **Description:** Remove an aircraft from the hangar.
 
 Para remover uma aeronave, a rota é a mesma da anterior, a diferença é que agora o tipo da requisição é `DELETE`, ou seja, agora nós estamos removendo a aeronave que possui id 10, do nosso hangar que possui id 4:
 
@@ -223,39 +223,39 @@ Agora o campo `aircrafts` voltou a ser uma lista vazia, pois nós acabamos de re
 
 ---
 
-### Deletar um hangar por id
+### Delete a hangar by id
 
-- **Rota:** `DELETE /hangars/{id}`
-- **Descrição:** Deleta um hangar pelo id.
+- **Route:** `DELETE /hangars/{id}`
+- **Description:** Delete a hangar by id.
 
-Nesta requisição, nós iremos remover o hangar que nós adicionamos inicialmente, que possui o id 4:
+In this request, we will remove the hangar that we initially added, which has id 4:
 
 ![Screenshot from 2024-05-30 20-55-33](https://github.com/jaoteus/hangar-api-spring/assets/128613422/3785b58a-9eaf-49a6-b2a8-4d7a35521147)
 
-Agora, iremos fazer outra requisição `GET`, e perceba que o hangar não está presente, pois nós acabamos de remover:
+Now, let's make another request `GET`, and notice that the hangar is not present, as we just removed it:
 
 ![Screenshot from 2024-05-30 20-56-24](https://github.com/jaoteus/hangar-api-spring/assets/128613422/9b633206-ba75-494d-8dd3-7d4502ecb609)
 
 ---
 
-## 🚀 Como Executar
+## 🚀 How to Run
 
-Clone o repositório:
+Clone the repository:
 ```sh
 git clone https://github.com/jaoteus/hangar-api-spring.git
 ```
 
-Navegue até o diretório do projeto:
+Navigate to the project directory:
 ```sh
 cd hangarapi/
 ```
-Agora suba o container com o Postgres com o seguinte comando (no Linux):
+Now upload the container with Postgres with the following command (on Linux):
 ```sh
 sudo docker-compose up -d
 ```
-O arquivo `docker-compose.yml` já está no projeto.
+The file `docker-compose.yml` is already in the project.
 
-Agora compile e execute a aplicação:
+Now compile and run the application:
 
 ```sh
 mvn clean install
@@ -263,7 +263,7 @@ mvn spring-boot:run
 ```
 
 
-### 📄 Licença
-Este projeto está licenciado sob a Licença MIT. Veja o arquivo LICENSE para mais detalhes.
+### 📄 License
+This project is licensed under the MIT License. See the LICENSE file for more details.
 
 ---
